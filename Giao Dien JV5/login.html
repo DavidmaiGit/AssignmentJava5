@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <link rel="icon" href="Library/Image/ico-website.png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <style>
+        #overlay {
+            z-index: 99;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #19CC8B;
+        }
+        #containerLogin {
+            z-index: 100;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            background-color: #2A2D33;
+            border-radius: 40px;
+            font-family: "Avenir", sans-serif;
+            color: #515866;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+        }
+        #containerLogin > div {
+            margin: 80px 40px 40px 40px;
+        }
+        #containerLogin > div > h1 {
+            width: 100%;
+            color: #eeeeee;
+            font-weight: 900;
+            border-bottom: 4px solid #eeeeee;
+            padding-bottom: 8px;
+            text-align: center;
+            font-size: 30px;
+            cursor: default;
+        }
+        #containerLogin > div> form > div {
+            margin: 35px 0;
+        }
+        #containerLogin > div> form > div > label {
+            display: block;
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 0 10px 2px;
+            letter-spacing: 0.5px;
+        }
+        #containerLogin > div > form > div > label > input {
+            font: 500 18px/40px "Avenir", sans-serif;
+            height: 40px;
+            padding: 0 10px;
+            color: #eeeeee;
+            background: #515866;
+            border: none;
+            width: -webkit-calc(100%);
+            width: calc(100%);
+            border-radius: 10px;
+        }
+        #containerLogin > div > form > div > label > input:focus {
+            outline: none;
+            background: #626975;
+        }
+        #containerLogin > div > form > button {
+            color: #fff;
+            background: #19CC8B;
+            margin: 15px auto 20px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 800;
+            width: 170px;
+            height: 40px;
+            outline: none;
+            text-align: center;
+            display: block;
+            cursor: pointer;
+            -webkit-transition: background 0.25s ease;
+            -moz-transition: background 0.25s ease;
+            transition: background 0.25s ease;
+        }
+        #containerLogin > div > form > button:hover {
+            background: #15ad76;
+        }
+        #containerLogin > div > a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            width: 186px;
+            letter-spacing: 0.5px;
+            margin: 0 auto;
+            padding: 3px;
+            border-bottom: 1px solid #515866;
+            cursor: pointer;
+            -webkit-transition: opacity 0.5s, margin 0.5s 0.5s;
+            -moz-transition: opacity 0.5s, margin 0.5s 0.5s;
+            transition: opacity 0.5s, margin 0.5s 0.5s;
+        }
+        #containerLogin > div > a:hover {
+            color: #626975;
+            border-bottom: 1px solid #626975;
+        }
+        .logoImage {
+            position: absolute;
+            left: 100px;
+            top: -140px;
+            max-width: 110px;
+            max-height: 110px;
+            width: 110px;
+            height: 110px;
+            background-color: #626975;
+            background-image: url("Library/Image/ico-website.png");
+            background-repeat: no-repeat;
+            background-size: 80px 80px;
+            background-position: 50% 50%;
+            border-radius: 50%;
+            border: 4px solid #515866;
+            transition: max-width 0.35s, max-height 0.35s, width 0.35s, height 0.35s, background-size 0.35s, border-radius 0.35s, left 0.65s, top 0.65s;
+        }
+        .logoImage:hover {
+            max-width: 150px;
+            max-height: 150px;
+            width: 150px;
+            height: 150px;
+            background-size: 140px 140px;
+            border-radius: 10%;
+            left: 80px;
+            top: -160px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="containerLogin">
+    <div class="logoImage"></div>
+    <div>
+        <h1>Login</h1>
+
+        <form>
+            <div>
+                <label>Account
+                    <input type="text" name="username" required>
+                </label>
+            </div>
+            <div>
+                <label>Password
+                    <input type="password" name="password" required>
+                </label>
+            </div>
+            <button>Submit</button>
+        </form>
+        <a href="#">Forget your password?</a>
+    </div>
+</div>
+
+<div id="overlay"></div>
+
+</body>
+</html>
