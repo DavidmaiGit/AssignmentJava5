@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="530b10cc-daf8-4f8f-a7d1-cb128bdf5e07" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/thongke.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/CSSContent.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nhanvien.html" beforeDir="false" afterPath="$PROJECT_DIR$/Content/nhanvien.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thongke.html" beforeDir="false" />
-    </list>
+    <list default="true" id="530b10cc-daf8-4f8f-a7d1-cb128bdf5e07" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,7 +66,7 @@
       <workItem from="1581567159060" duration="19008000" />
       <workItem from="1581643159524" duration="214000" />
       <workItem from="1581649185981" duration="2406000" />
-      <workItem from="1581651611597" duration="958000" />
+      <workItem from="1581651611597" duration="1056000" />
     </task>
     <servers />
   </component>
@@ -148,9 +142,10 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="687" y="364" key="com.intellij.ide.util.TipDialog/62.0.1858.1080/1920.0.1858.1080@62.0.1858.1080" timestamp="1581643336096" />
-    <state x="373" y="161" key="new project wizard" timestamp="1581643372567">
-      <screen x="62" y="0" width="1858" height="1080" />
+    <state x="321" y="161" key="new project wizard" timestamp="1581652729247">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="321" y="161" key="new project wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1581652729247" />
     <state x="373" y="161" key="new project wizard/62.0.1858.1080/1920.0.1858.1080@62.0.1858.1080" timestamp="1581643372567" />
   </component>
 </project>
