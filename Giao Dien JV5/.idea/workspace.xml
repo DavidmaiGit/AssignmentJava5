@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="530b10cc-daf8-4f8f-a7d1-cb128bdf5e07" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/thongke.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nhanvien.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/thongke.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Library/CSSContent.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nhanvien.html" beforeDir="false" afterPath="$PROJECT_DIR$/Content/nhanvien.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/thongke.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -38,6 +39,11 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\GitHub\AssignmentJava5\Giao Dien JV5\Content" />
+    </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.login.html">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Giao Dien JV5/index.html" useBuiltInWebServerPort="true">
@@ -65,7 +71,8 @@
       <updated>1581567157555</updated>
       <workItem from="1581567159060" duration="19008000" />
       <workItem from="1581643159524" duration="214000" />
-      <workItem from="1581649185981" duration="808000" />
+      <workItem from="1581649185981" duration="2406000" />
+      <workItem from="1581651611597" duration="958000" />
     </task>
     <servers />
   </component>
