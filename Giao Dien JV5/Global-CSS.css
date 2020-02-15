@@ -1,13 +1,29 @@
 /*
     Color Theme
 
-#15ad76
+#EEEEEE
+
 #19CC8B
+#15ad76
 
-#2A2D33
-#515866
 #626975
-
+#515866
 #414345
+#2A2D33
 
 */
+:root {
+    /*White color*/
+    --color-white: #EEEEEE;
+
+    /*Green color*/
+    --color-green: #19CC8B;
+    --color-green-2: #15AD76;
+    --color-green-hover: var(--color-green-2);
+
+    /*Black color*/
+    --color-black: #626975;
+    --color-black-2: #515866;
+    --color-black-3: #414345;
+    --color-black-4: #2A2D33;
+}
