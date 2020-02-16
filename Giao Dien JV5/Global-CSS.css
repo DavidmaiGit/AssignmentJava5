@@ -27,3 +27,9 @@
     --color-black-3: #414345;
     --color-black-4: #2A2D33;
 }
+
+.content {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
