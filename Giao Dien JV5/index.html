@@ -56,7 +56,7 @@
             border-radius: 3px;
         }
 
-        #content {
+        #contentIframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -66,13 +66,13 @@
             height: 100%;
             margin-top: 58px;
             z-index: 1;
-            background-color: #15ad76;
+            /*background-color: #19CC8B;*/
         }
-        #content > iframe {
+        #contentIframe > iframe {
              width: 100%;
              height: 100%;
              border: none;
-         }
+        }
     </style>
 
 </head>
@@ -80,7 +80,7 @@
 
 <header class="w3-row">
     <div class="w3-col">
-        <a href="#a"><img src="Library/Image/ico-website.png" alt="Logo"><label>Trang chủ</label></a>
+        <a href="index.html"><img src="Library/Image/ico-website.png" alt="Logo"><label>Trang chủ</label></a>
     </div>
     <div class="w3-rest">
         <div class="w3-bar">
@@ -94,8 +94,8 @@
     </div>
 </header>
 
-<div id="content">
-    <iframe name="iframe-global"></iframe>
+<div id="contentIframe">
+    <iframe name="iframe-global" src="home.html"></iframe>
 </div>
 
 <script>
@@ -105,6 +105,7 @@
             globaaa.children[i].classList.remove("selectNavMenu");
         }
         vla.classList.add("selectNavMenu");
+        document.title = vla.innerText;
     }
 </script>
 

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home Page</title>
+    <link rel="icon" href="Library/Image/ico-website.png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="Global-CSS.css">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #15AD76;
+            color: white;
+            transition: background-color 10s linear;
+            -webkit-box-shadow: 0 0 50px 0 rgba(0,0,0,0.4);
+            box-shadow: 0 0 50px 0 rgba(0,0,0,0.4);
+        }
+        header > div.content.w3-row {
+            position: relative;
+            padding: 100px 0;
+        }
+        header > div.content.w3-row > div.w3-col.w3-left {
+            z-index: 2;
+        }
+        header > div.content.w3-row > div.w3-col.w3-left > h1 {
+            font-size: 85px;
+            line-height: 85px;
+            font-weight: 800;
+            max-width: 700px;
+            letter-spacing: 4px;
+            word-spacing: 4px;
+            text-align: justify;
+            margin: 0 0 50px 0;
+            cursor: default;
+        }
+        header > div.content.w3-row > div.w3-col.w3-left > p {
+            font-size: 17px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            word-spacing: 4px;
+            text-align: justify;
+            cursor: default;
+        }
+        header > div.content.w3-row > div.w3-col.w3-right {
+            z-index: 1;
+        }
+        header > div.content.w3-row > div.w3-col.w3-right > img {
+            width: 750px;
+            position: absolute;
+            bottom: 0;
+            transform: translate(-60%, 0%);
+        }
+        #directionalHome {
+            padding: 15px 0;
+            /*background-color: #515866;*/
+        }
+        #directionalHome > div.content {
+            display: flex;
+            justify-content: center;
+        }
+        #directionalHome > div.content > a {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: initial;
+            color: #666666;
+            margin: 0 20px;
+            padding: 10px 25px;
+            border-radius: 10px;
+            transition: color 0.1s, background-color 0.1s;
+            font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Droid Sans,Helvetica Neue,Arial,sans-serif;
+        }
+        #directionalHome > div.content > a:hover {
+            color: white;
+            background-color: rgba(115, 204, 124, 1);
+        }
+        #top10Home {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        #top10Home > a {
+            position: relative;
+            max-width: 390px;
+            max-height: 300px;
+            width: 100%;
+            height: 300px;
+            /*background-color: #15AD76;*/
+            margin: 0 0 50px 0;
+            border: 2px solid #EAEAEA;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 15px 20px -10px rgba(0,0,0,0.3);
+            box-shadow: 0px 15px 20px -10px rgba(0,0,0,0.2);
+            background: url("Library/Image/57276.png") no-repeat scroll 50% 50%;
+            background-size: 390px;
+        }
+        #top10Home > a > div {
+            position: absolute;
+            bottom: 0;
+            background-color: #eaeaea;
+            width: 100%;
+            height: 64px;
+        }
+        #top10Home > a > label {
+            position: absolute;
+            font-weight: 700;
+            font-size: 20px;
+            bottom: 64px;
+            color: white;
+            width: 100%;
+            height: 50%;
+            padding: 110px 20px 5px 20px;
+            background-image: linear-gradient(180deg,transparent, rgba(25, 25, 25, 0.7));
+            font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Droid Sans,Helvetica Neue,Arial,sans-serif;
+        }
+        #top10Home > a > label > span {
+            float: right;
+            font-weight: initial;
+            font-size: 16px;
+        }
+    </style>
+
+</head>
+<body>
+
+<header id="headerHome">
+    <div class="content w3-row">
+<!--        Text content header-->
+        <div class="w3-col w3-left" style="max-width: 700px; width: auto">
+            <h1>Nhân viên xuất sắc của năm</h1>
+            <p>Cuộc thi nhân viên xuất sắc 2020 đã bắt đầu, những nhân viên có thành tích tốt nhất trong năm sẽ là người chiến thắng của cuộc thi!</p>
+            <p>Cảm ơn bạn vì đã là một phần của cuộc thi và chúc bạn sẽ là người chiến thắng!</p>
+        </div>
+
+<!--        Image content header-->
+        <div class="w3-col w3-right" style="width: auto">
+            <img src="Library/Image/57276.png" alt="">
+        </div>
+    </div>
+</header>
+<!--directional-->
+<div id="directionalHome">
+    <div class="content">
+        <a href="#TypicalFaceHome">Gương mặt tiêu biểu</a>
+        <a href="#RankHome">Bảng xếp hạng</a>
+        <a href="#PrizeHome">Giải thưởng</a>
+    </div>
+</div>
+
+<!--Typical face-->
+<div id="TypicalFaceHome">
+    Typical face
+</div>
+
+<!--Rank-->
+<div id="RankHome">
+Rank Top 10
+    <div id="top10Home" class="content">
+        <a>
+            <div>Hello</div>
+            <label>Ngô Thừa Ân<span>Phòng ban</span></label>
+        </a>
+        <a>
+            <div></div>
+            <label></label>
+        </a>
+        <a>
+            <div></div>
+            <label></label>
+        </a>
+        <a>
+            <div></div>
+            <label></label>
+        </a>
+        <a>
+            <div></div>
+            <label></label>
+        </a>
+        <a>
+            <div></div>
+            <label></label>
+        </a>
+        <a>
+            <div></div>
+            <label></label>
+        </a>
+        <a>
+            <div></div>
+            <label></label>
+        </a>
+        <a>
+            <div></div>
+            <label></label>
+        </a>
+    </div>
+    <div id="listRankHome" class="content">
+        List Rank
+    </div>
+</div>
+
+<!--Prize-->
+<div id="PrizeHome">
+    Prize
+</div>
+
+<script>
+    var color = 0;
+
+    function myLoop () {
+        setTimeout(function () {
+            switch (color) {
+                case 0:
+                    document.getElementById("headerHome").style.backgroundColor = "#002EC7";
+                    color = 1;
+                    myLoop();
+                    break;
+                case 1:
+                    document.getElementById("headerHome").style.backgroundColor = "#F22E83";
+                    color = 2;
+                    myLoop();
+                    break;
+                case 2:
+                    document.getElementById("headerHome").style.backgroundColor = "#8C00FF";
+                    color = 3;
+                    myLoop();
+                    break;
+                case 3:
+                    document.getElementById("headerHome").style.backgroundColor = "#FF8C00";
+                    color = 4;
+                    myLoop();
+                    break;
+                case 4:
+                    document.getElementById("headerHome").style.backgroundColor = "#15AD76";
+                    color = 0;
+                    myLoop();
+                    break;
+            }
+        }, 10000)
+    }
+
+    myLoop();
+</script>
+
+</body>
+</html>
