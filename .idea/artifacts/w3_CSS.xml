@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact name="w3_CSS">
+    <output-path>$PROJECT_DIR$/out/artifacts/w3_CSS</output-path>
+    <root id="root">
+      <element id="library" level="application" name="w3" />
+    </root>
+  </artifact>
+</component>
