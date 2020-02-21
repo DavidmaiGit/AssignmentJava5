@@ -10,12 +10,16 @@
     <link rel="stylesheet" href="Library/font/fontawesome-pro-5.12.0-web/css/all.css">
 
     <style>
+        html {
+            background-color: #FCFCFC;
+        }
+
         header {
             background-color: #15AD76;
             color: white;
             transition: background-color 10s linear;
-            -webkit-box-shadow: 0 0 50px 0 rgba(0,0,0,0.4);
-            box-shadow: 0 0 50px 0 rgba(0,0,0,0.4);
+            /*-webkit-box-shadow: 0 0 50px 0 rgba(0,0,0,0.4);*/
+            /*box-shadow: 0 0 50px 0 rgba(0,0,0,0.4);*/
         }
         header > div.content.w3-row {
             position: relative;
@@ -171,7 +175,7 @@
         #listRankHome > table {
             width: 100%;
             border: 1px solid #ccc!important;
-            box-shadow: var(--box-shadow-2);
+            box-shadow: var(--box-shadow-1);
         }
         #listRankHome > table > thead > tr > th, #listRankHome > table > tfoot > tr > th {
             font-weight: normal;
@@ -203,6 +207,81 @@
         #listRankHome > table > tbody > tr > td:nth-child(7), #listRankHome > table > tbody > tr > td:nth-child(8) {
             display: none;
         }
+
+        #PrizeHome {
+            padding: 50px 0;
+        }
+        #PrizeHome > div.content {
+            position: relative;
+            height: 600px;
+        }
+        .winner-h1 {
+            font-family: Gotham SSm A,Gotham SSm B,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Droid Sans,Helvetica Neue,Arial,sans-serif;
+            color: #27282c;
+            font-weight: 700;
+            font-size: 31px;
+            line-height: 40px;
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-image-slice: 1;
+            display: inline;
+            border-image-source: linear-gradient(91deg,#ff8c00,#f52783 53%,#0024ca);
+        }
+        .winner-label {
+            color: rgba(39,40,44,.7);
+            letter-spacing: normal;
+            font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Droid Sans,Helvetica Neue,Arial,sans-serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+            display: block;
+            margin-top: 10px;
+        }
+        .winner-1 {
+            position: absolute;
+            top: 20px;
+            right: 160px;
+        }
+        .winner-2 {
+            position: absolute;
+            top: 140px;
+            left: 120px;
+        }
+        .winner-3 {
+            position: absolute;
+            bottom: 40px;
+            right: 100px;
+        }
+        .winner-image {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0%);
+        }
+
+        footer {
+            padding: 50px 0;
+        }
+        footer > div.content > div:nth-child(1) > label {
+            font-size: 12px;
+            margin-left: 15px;
+            color: #888;
+        }
+        footer > div.content > div:nth-child(1) > img {
+            width: 40px;
+            height: 40px;
+        }
+        footer > div.content > div:nth-child(2) > ul {
+            margin-top: 20px;
+            color: #888;
+            font-size: 12px;
+        }
+        footer > div.content > div:nth-child(2) > ul > li {
+            display: inline-block;
+        }
+        footer > div.content > div:nth-child(2) > ul > li:nth-child(odd) {
+            cursor: pointer;
+        }
     </style>
 
 </head>
@@ -224,19 +303,38 @@
     </div>
 </header>
 <!--directional-->
-<div id="directionalHome">
+<!--<div id="directionalHome">-->
+<!--    <div class="content">-->
+<!--        <a href="#PrizeHome">Giải thưởng</a>-->
+<!--&lt;!&ndash;        <a href="#TypicalFaceHome">Gương mặt tiêu biểu</a>&ndash;&gt;-->
+<!--        <a href="#RankHome">Top 10</a>-->
+<!--        <a href="#listRankHome">Bảng xếp hạng</a>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--Prize-->
+<div id="PrizeHome">
     <div class="content">
-        <a href="#TypicalFaceHome">Gương mặt tiêu biểu</a>
-        <a href="#RankHome">Top 10</a>
-        <a href="#listRankHome">Bảng xếp hạng</a>
-        <a href="#PrizeHome">Giải thưởng</a>
+        <div class="winner-1">
+            <h1 class="winner-h1">Giải nhất</h1><br>
+            <label class="winner-label">Tổng giải thưởng trị giá $1000 cho<br>người có thành tích xuất sắc nhất.</label>
+        </div>
+        <div class="winner-2">
+            <h1 class="winner-h1">Giải nhì</h1><br>
+            <label class="winner-label">Tổng giải thưởng trị giá $500 cho<br>người có thành tích tốt.</label>
+        </div>
+        <div class="winner-3">
+            <h1 class="winner-h1">Giải ba</h1><br>
+            <label class="winner-label">Tổng giải thưởng trị giá $300 cho<br>người có thành tích khá.</label>
+        </div>
+        <div class="winner-image"><img src="Library/Image/winners-3-x.png" alt=""></div>
     </div>
 </div>
 
 <!--Typical face-->
-<div id="TypicalFaceHome">
-    Typical face
-</div>
+<!--<div id="TypicalFaceHome">-->
+<!--    Typical face-->
+<!--</div>-->
 
 <!--Rank-->
 <div id="RankHome">
@@ -446,10 +544,23 @@
     </div>
 </div>
 
-<!--Prize-->
-<div id="PrizeHome">
-    Prize
-</div>
+<footer id="footer">
+    <div class="content">
+        <div class="content-center content-item-center">
+            <img src="Library/Image/ico-website.png" alt="">
+            <label>ABC Group</label>
+        </div>
+        <div class="content-center">
+            <ul>
+                <li>Giới thiệu</li>
+                <li>•</li>
+                <li>Liên hệ</li>
+                <li>•</li>
+                <li>Góp ý</li>
+            </ul>
+        </div>
+    </div>
+</footer>
 
 <script>
     var color = 0;
