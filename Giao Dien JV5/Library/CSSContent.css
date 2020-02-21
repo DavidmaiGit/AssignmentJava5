@@ -2,3 +2,59 @@
     width: 100%;
     min-height: 1000px;
 }
+.contentBody div{
+    margin: 0 auto;
+}
+#table{
+    width: 95%;
+}
+
+#table td {
+    text-align: center;
+}
+
+ html {
+     scroll-behavior: smooth;
+ }
+header {
+    background-color: #15AD76;
+    color: white;
+    transition: background-color 10s linear;
+    -webkit-box-shadow: 0 0 50px 0 rgba(0,0,0,0.4);
+    box-shadow: 0 0 50px 0 rgba(0,0,0,0.4);
+}
+header > div.content.w3-row {
+    position: relative;
+    padding: 100px 0;
+}
+header > div.content.w3-row > div.w3-col.w3-left {
+    z-index: 2;
+}
+header > div.content.w3-row > div.w3-col.w3-left > h1 {
+    font-size: 85px;
+    line-height: 85px;
+    font-weight: 800;
+    max-width: 700px;
+    letter-spacing: 4px;
+    word-spacing: 4px;
+    margin: 0 0 50px 0;
+    text-align: justify;
+    cursor: default;
+}
+header > div.content.w3-row > div.w3-col.w3-left > p {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    word-spacing: 4px;
+    text-align: justify;
+    cursor: default;
+}
+header > div.content.w3-row > div.w3-col.w3-right {
+    z-index: 1;
+}
+header > div.content.w3-row > div.w3-col.w3-right > img {
+    width: 750px;
+    position: absolute;
+    bottom: 0;
+    transform: translate(-60%, 0%);
+}
