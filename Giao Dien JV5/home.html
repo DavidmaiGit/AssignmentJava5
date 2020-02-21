@@ -7,11 +7,9 @@
     <link rel="icon" href="Library/Image/ico-website.png">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="Global-CSS.css">
+    <link rel="stylesheet" href="Library/font/fontawesome-pro-5.12.0-web/css/all.css">
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
         header {
             background-color: #15AD76;
             color: white;
@@ -90,36 +88,120 @@
             height: 300px;
             /*background-color: #15AD76;*/
             margin: 0 0 50px 0;
-            border: 2px solid #EAEAEA;
+            border: 2px solid #fbfbfb;
             border-radius: 5px;
-            -webkit-box-shadow: 0px 15px 20px -10px rgba(0,0,0,0.3);
-            box-shadow: 0px 15px 20px -10px rgba(0,0,0,0.2);
-            background: url("Library/Image/57276.png") no-repeat scroll 50% 50%;
+            box-shadow: var(--box-shadow-2);
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-attachment: scroll;
             background-size: 390px;
         }
         #top10Home > a > div {
             position: absolute;
             bottom: 0;
-            background-color: #eaeaea;
+            background-color: #fbfbfb;
             width: 100%;
             height: 64px;
         }
-        #top10Home > a > label {
+        #top10Home > a > div > span:nth-child(1) {
+            display: block;
+            background-color: #15AD76;
+            color: white;
+            font-size: 40px;
+            font-weight: 900;
+            font-family: fontNumber,serif;
+            text-align: center;
+            max-width: 60px;
+            max-height: 60px;
+            margin: 3px 0 0 0;
+            padding: 0 0 0 0;
+            cursor: pointer;
+            border-radius: 4px;
+            text-shadow: var(--box-shadow-2);
+            box-shadow: var(--box-shadow-1);
+        }
+        #top10Home > a > div > span:nth-child(2) {
             position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #15AD76;
+            color: white;
+            margin: 3px 0 0 0;
+            padding: 6px 10px 6px 10px;
+            border-radius: 5px 2px 2px 2px;
+        }
+        #top10Home > a > div > span:nth-child(2):before {
+            content: "Cấp ";
+        }
+        #top10Home > a > div > span:nth-child(3) {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background-color: #15AD76;
+            color: white;
+            margin: 3px 0 0 0;
+            padding: 6px 10px 6px 10px;
+            border-radius: 5px 0 4px 2px;
+            box-shadow: var(--box-shadow-1);
+        }
+        #top10Home > a > label {
             font-weight: 700;
             font-size: 20px;
+            position: absolute;
             bottom: 64px;
             color: white;
             width: 100%;
             height: 50%;
+            cursor: pointer;
             padding: 110px 20px 5px 20px;
+            text-shadow: var(--box-shadow-2);
             background-image: linear-gradient(180deg,transparent, rgba(25, 25, 25, 0.7));
             font-family: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Droid Sans,Helvetica Neue,Arial,sans-serif;
         }
-        #top10Home > a > label > span {
+        #top10Home > a > span {
+            position: absolute;
+            bottom: 70px;
+            right: 10px;
             float: right;
             font-weight: initial;
             font-size: 16px;
+            color: white;
+            text-shadow: var(--box-shadow-2);
+        }
+        #listRankHome > table {
+            width: 100%;
+            border: 1px solid #ccc!important;
+            box-shadow: var(--box-shadow-2);
+        }
+        #listRankHome > table > thead > tr > th, #listRankHome > table > tfoot > tr > th {
+            font-weight: normal;
+            color: #1a7d58;
+            border-bottom: 1px solid #cccccc;
+            border-top: 1px solid #cccccc;
+            font-size: 15px;
+            cursor: default;
+        }
+        #listRankHome > table > tbody > tr {
+            font-size: 14px;
+        }
+        #listRankHome > table > tbody > tr:nth-child(odd) {
+            background-color: rgba(115, 204, 124, 0.1);
+        }
+        #listRankHome > table > tbody > tr:nth-child(even) {
+            background-color: #FFFFFF;
+        }
+        #listRankHome > table > thead > tr > th:nth-child(1), #listRankHome > table > tfoot > tr > th:nth-child(1),
+        #listRankHome > table > thead > tr > th:nth-child(3), #listRankHome > table > tfoot > tr > th:nth-child(3),
+        #listRankHome > table > thead > tr > th:nth-child(5), #listRankHome > table > tfoot > tr > th:nth-child(5),
+        #listRankHome > table > thead > tr > th:nth-child(6), #listRankHome > table > tfoot > tr > th:nth-child(6),
+        #listRankHome > table > tbody > tr > td:nth-child(1), #listRankHome > table > tbody > tr > td:nth-child(3),
+        #listRankHome > table > tbody > tr > td:nth-child(5), #listRankHome > table > tbody > tr > td:nth-child(6){
+            text-align: center;
+        }
+        #listRankHome > table > thead > tr > th:nth-child(7), #listRankHome > table > tfoot > tr > th:nth-child(7),
+        #listRankHome > table > thead > tr > th:nth-child(8), #listRankHome > table > tfoot > tr > th:nth-child(8),
+        #listRankHome > table > tbody > tr > td:nth-child(7), #listRankHome > table > tbody > tr > td:nth-child(8) {
+            display: none;
         }
     </style>
 
@@ -145,7 +227,8 @@
 <div id="directionalHome">
     <div class="content">
         <a href="#TypicalFaceHome">Gương mặt tiêu biểu</a>
-        <a href="#RankHome">Bảng xếp hạng</a>
+        <a href="#RankHome">Top 10</a>
+        <a href="#listRankHome">Bảng xếp hạng</a>
         <a href="#PrizeHome">Giải thưởng</a>
     </div>
 </div>
@@ -157,47 +240,209 @@
 
 <!--Rank-->
 <div id="RankHome">
-Rank Top 10
     <div id="top10Home" class="content">
-        <a>
-            <div>Hello</div>
-            <label>Ngô Thừa Ân<span>Phòng ban</span></label>
+        <a href="#">
+            <div>
+                <span>...</span>
+                <span>...</span>
+                <span>Thành tích: ... | Kỷ luật: ...</span>
+            </div>
+            <label>...</label>
+            <span>...</span>
         </a>
-        <a>
-            <div></div>
-            <label></label>
+        <a href="#">
+            <div>
+                <span>...</span>
+                <span>...</span>
+                <span>Thành tích: ... | Kỷ luật: ...</span>
+            </div>
+            <label>...</label>
+            <span>...</span>
         </a>
-        <a>
-            <div></div>
-            <label></label>
+        <a href="#">
+            <div>
+                <span>...</span>
+                <span>...</span>
+                <span>Thành tích: ... | Kỷ luật: ...</span>
+            </div>
+            <label>...</label>
+            <span>...</span>
         </a>
-        <a>
-            <div></div>
-            <label></label>
+        <a href="#">
+            <div>
+                <span>...</span>
+                <span>...</span>
+                <span>Thành tích: ... | Kỷ luật: ...</span>
+            </div>
+            <label>...</label>
+            <span>...</span>
         </a>
-        <a>
-            <div></div>
-            <label></label>
+        <a href="#">
+            <div>
+                <span>...</span>
+                <span>...</span>
+                <span>Thành tích: ... | Kỷ luật: ...</span>
+            </div>
+            <label>...</label>
+            <span>...</span>
         </a>
-        <a>
-            <div></div>
-            <label></label>
+        <a href="#">
+            <div>
+                <span>...</span>
+                <span>...</span>
+                <span>Thành tích: ... | Kỷ luật: ...</span>
+            </div>
+            <label>...</label>
+            <span>...</span>
         </a>
-        <a>
-            <div></div>
-            <label></label>
+        <a href="#">
+            <div>
+                <span>...</span>
+                <span>...</span>
+                <span>Thành tích: ... | Kỷ luật: ...</span>
+            </div>
+            <label>...</label>
+            <span>...</span>
         </a>
-        <a>
-            <div></div>
-            <label></label>
+        <a href="#">
+            <div>
+                <span>...</span>
+                <span>...</span>
+                <span>Thành tích: ... | Kỷ luật: ...</span>
+            </div>
+            <label>...</label>
+            <span>...</span>
         </a>
-        <a>
-            <div></div>
-            <label></label>
+        <a href="#">
+            <div>
+                <span>...</span>
+                <span>...</span>
+                <span>Thành tích: ... | Kỷ luật: ...</span>
+            </div>
+            <label>...</label>
+            <span>...</span>
         </a>
     </div>
+
     <div id="listRankHome" class="content">
-        List Rank
+        <table class="w3-table">
+            <thead>
+            <tr>
+                <th width="4%">Top</th>
+                <th>Họ và tên</th>
+                <th width="8%">Cấp độ</th>
+                <th>Phòng ban</th>
+                <th width="8%">Thành tích</th>
+                <th width="8%">Kỷ luật</th>
+                <th>ID</th>
+                <th>Image</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>http://localhost/img/2756421.jpg</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>http://localhost/img/2817625.jpg</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>http://localhost/img/2818073.jpg</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>http://localhost/img/2820287.jpg</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>http://localhost/img/2846378.jpg</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>http://localhost/img/3141366.jpg</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>http://localhost/img/3425571.jpg</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>http://localhost/img/3432984.jpg</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>a</td>
+                <td>http://localhost/img/3433515.jpg</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th>Top</th>
+                <th>Họ và tên</th>
+                <th>Cấp độ</th>
+                <th>Phòng ban</th>
+                <th>Thành tích</th>
+                <th>Kỷ luật</th>
+                <th>ID</th>
+                <th>Image</th>
+            </tr>
+            </tfoot>
+        </table>
     </div>
 </div>
 
@@ -208,6 +453,7 @@ Rank Top 10
 
 <script>
     var color = 0;
+    var table = document.getElementById("listRankHome").children;
 
     function myLoop () {
         setTimeout(function () {
@@ -241,6 +487,44 @@ Rank Top 10
         }, 10000)
     }
 
+    function tagTop10(top, name, department, level, achievements, discipline, urlImage) {
+        var tagA = document.getElementById("top10Home").children;
+    //    setTop
+        tagA[top - 1].children[0].children[0].innerHTML = top;
+    //    setName
+        tagA[top - 1].children[1].innerHTML = name;
+    //    setDepartment
+        tagA[top - 1].children[2].innerHTML = department;
+    //    setLevel
+        tagA[top - 1].children[0].children[1].innerHTML = level;
+    //    setAchievements and Discipline
+        tagA[top - 1].children[0].children[2].innerHTML = "Thành tích: " + achievements + " | Kỷ luật: " + discipline;
+    //    setImage
+        tagA[top - 1].style.backgroundImage = "url('" + urlImage + "')";
+    }
+
+    function loadNumberTable() {
+        var row = table[0].children[1].children;
+        for(var i = 0; i < row.length; i++) {
+            row[i].children[0].innerHTML = i + 1;
+        }
+    }
+
+    function loadTop10() {
+        for (var i = 0; i < 9; i++) {
+            var top = table[0].children[1].children[i].children[0].innerHTML;
+            var name = table[0].children[1].children[i].children[1].innerHTML;
+            var department = table[0].children[1].children[i].children[2].innerHTML;
+            var level = table[0].children[1].children[i].children[3].innerHTML;
+            var achievements = table[0].children[1].children[i].children[4].innerHTML;
+            var discipline = table[0].children[1].children[i].children[5].innerHTML;
+            var urlImage = table[0].children[1].children[i].children[7].innerHTML;
+            tagTop10(top, name, department, level, achievements, discipline, urlImage);
+        }
+    }
+
+    loadNumberTable();
+    loadTop10();
     myLoop();
 </script>
 
