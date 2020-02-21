@@ -51,3 +51,18 @@ html {
     width: 100%;
     margin: 0 auto;
 }
+.content-left {
+    display: flex;
+    justify-content: left;
+}
+.content-center {
+    display: flex;
+    justify-content: center;
+}
+.content-right {
+    display: flex;
+    justify-content: right;
+}
+.content-item-center {
+    align-items: center;
+}
