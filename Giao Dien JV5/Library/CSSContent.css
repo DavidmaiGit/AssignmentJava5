@@ -8,9 +8,21 @@
 #table{
     width: 95%;
 }
-
 #table td {
     text-align: center;
+}
+.table-btn{
+    background-color: orangered;
+    color: white;
+    padding: 5px 20px 5px 20px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.table-btn:hover{
+    background-color: orange;
+    border-radius: 5px;
 }
 
  html {
