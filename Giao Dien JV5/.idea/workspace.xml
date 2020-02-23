@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="530b10cc-daf8-4f8f-a7d1-cb128bdf5e07" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Library/Image/winners-3-x.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Global-CSS.css" beforeDir="false" afterPath="$PROJECT_DIR$/Global-CSS.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +38,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -87,6 +84,7 @@
       <workItem from="1582041234523" duration="74000" />
       <workItem from="1582180313224" duration="453000" />
       <workItem from="1582297504151" duration="11438000" />
+      <workItem from="1582366764047" duration="405000" />
     </task>
     <servers />
   </component>
@@ -169,19 +167,19 @@
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state width="1815" height="364" key="GridCell.Tab.3.right/62.0.1858.1080/1920.0.1858.1080@62.0.1858.1080" timestamp="1582315544717" />
-    <state x="492" y="183" key="SettingsEditor" timestamp="1581762159070">
+    <state x="492" y="183" key="SettingsEditor" timestamp="1582367032394">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="492" y="183" key="SettingsEditor/62.0.1858.1080/1920.0.1858.1080@62.0.1858.1080" timestamp="1581762159070" />
-    <state x="687" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1582180324866">
+    <state x="492" y="183" key="SettingsEditor/62.0.1858.1080/1920.0.1858.1080@62.0.1858.1080" timestamp="1582367032394" />
+    <state x="687" y="364" key="com.intellij.ide.util.TipDialog" timestamp="1582366840503">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
-    <state x="687" y="364" key="com.intellij.ide.util.TipDialog/62.0.1858.1080/1920.0.1858.1080@62.0.1858.1080" timestamp="1582180324866" />
-    <state x="373" y="161" key="new project wizard" timestamp="1582180764631">
+    <state x="687" y="364" key="com.intellij.ide.util.TipDialog/62.0.1858.1080/1920.0.1858.1080@62.0.1858.1080" timestamp="1582366840503" />
+    <state x="373" y="161" key="new project wizard" timestamp="1582367170769">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
     <state x="321" y="161" key="new project wizard/0.0.1920.1080@0.0.1920.1080" timestamp="1581652729247" />
-    <state x="373" y="161" key="new project wizard/62.0.1858.1080/1920.0.1858.1080@62.0.1858.1080" timestamp="1582180764631" />
+    <state x="373" y="161" key="new project wizard/62.0.1858.1080/1920.0.1858.1080@62.0.1858.1080" timestamp="1582367170769" />
     <state x="679" y="387" width="707" height="306" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1581762158223">
       <screen x="62" y="0" width="1858" height="1080" />
     </state>
