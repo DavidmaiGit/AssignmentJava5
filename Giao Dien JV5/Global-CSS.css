@@ -19,6 +19,10 @@
 }
 
 :root {
+    --color-text: #202124;
+    --color-text-2: #5f6368;
+    --color-text-hr: #1a73e8;
+
     /*White color*/
     --color-white: #EEEEEE;
 
@@ -39,7 +43,13 @@
     --box-shadow-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     --box-shadow-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     --box-shadow-5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    --box-shadow-gg: 0 1px 2px 0 rgba(60,64,67,.30), 0 2px 6px 2px rgba(60,64,67,.15);
 
+    /*Font family google*/
+    --font-family-gg: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+
+    /*Font gg*/
+    --font-gg-h1: 400 15px/20px Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
 }
 
 html {

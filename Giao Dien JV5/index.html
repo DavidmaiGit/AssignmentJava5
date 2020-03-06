@@ -9,9 +9,9 @@
 
     <style>
         header {
-            color: #eeeeee;
+            color: #5f6368;
             padding: 10px;
-            background: #414345;
+            background: #FFFFFF;
             max-height: 58px;
             height: 100%;
         }
@@ -40,6 +40,9 @@
             padding: 3px 0;
             cursor: pointer;
         }
+        header > div.w3-col > a > label:hover {
+            text-decoration: underline;
+        }
 
         header > div.w3-rest {
             float: right;
@@ -47,12 +50,12 @@
         }
 
         header > div.w3-rest > div.w3-bar > a.w3-bar-item.w3-button:hover {
-            color: #FFFFFF!important;
-            background-color: #515866 !important;
+            color: #5F6368 !important;
+            background-color: #F0F0F0 !important;
         }
 
         .selectNavMenu {
-            background-color: #15ad76;
+            background-color: #D9DADB;
             border-radius: 3px;
         }
 
@@ -68,10 +71,11 @@
             z-index: 1;
             /*background-color: #19CC8B;*/
         }
+
         #contentIframe > iframe {
-             width: 100%;
-             height: 100%;
-             border: none;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 
@@ -84,18 +88,24 @@
     </div>
     <div class="w3-rest">
         <div class="w3-bar">
-            <a href="https://hyperflex.vn/" target="iframe-global" class="w3-bar-item w3-button" onclick="clickNavMenu(this)">Quản lý tài khoản</a>
-            <a href="Content/nhanvien.html" target="iframe-global" class="w3-bar-item w3-button" onclick="clickNavMenu(this)">Nhân viên</a>
-            <a href="Content/phongban.html" target="iframe-global" class="w3-bar-item w3-button" onclick="clickNavMenu(this)">Phòng ban</a>
-            <a href="Content/thongke.html" target="iframe-global" class="w3-bar-item w3-button" onclick="clickNavMenu(this)">Ghi nhận thành tích</a>
-            <a href="Content/thongke.html" target="iframe-global" class="w3-bar-item w3-button" onclick="clickNavMenu(this)">Kỷ luật</a>
-            <a href="Content/thongke.html" target="iframe-global" class="w3-bar-item w3-button" onclick="clickNavMenu(this)">Tổng hợp thành tích</a>
+            <a href="https://hyperflex.vn/" target="iframe-global" class="w3-bar-item w3-button"
+               onclick="clickNavMenu(this)">Quản lý tài khoản</a>
+            <a href="Content/nhanvien.html" target="iframe-global" class="w3-bar-item w3-button"
+               onclick="clickNavMenu(this)">Nhân viên</a>
+            <a href="Content/phongban.html" target="iframe-global" class="w3-bar-item w3-button"
+               onclick="clickNavMenu(this)">Phòng ban</a>
+            <a href="Content/thongke.html" target="iframe-global" class="w3-bar-item w3-button"
+               onclick="clickNavMenu(this)">Thành tích</a>
+            <a href="Content/thongke.html" target="iframe-global" class="w3-bar-item w3-button"
+               onclick="clickNavMenu(this)">Kỷ luật</a>
+            <a href="Content/thongke.html" target="iframe-global" class="w3-bar-item w3-button"
+               onclick="clickNavMenu(this)">Tổng hợp thành tích</a>
         </div>
     </div>
 </header>
 
 <div id="contentIframe">
-    <iframe name="iframe-global" src="home.html"></iframe>
+    <iframe name="iframe-global" src="Content/phongban.html"></iframe>
 </div>
 
 <script>
