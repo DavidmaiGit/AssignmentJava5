@@ -76,3 +76,90 @@ html {
 .content-item-center {
     align-items: center;
 }
+
+.tagMenu {
+    margin: 20px 0 0 0;
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    left: 0;
+}
+
+.tagMenu > .tagMenu-content {
+    max-width: 280px;
+    width: 280px;
+}
+
+.tagMenu > .tagMenu-content > div > a {
+    color: #3c4043;
+    letter-spacing: .01785714em;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 16px 10px 25px;
+    border-radius: 0 50px 50px 0;
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tagMenu > .tagMenu-content > div > a:hover {
+    background-color: rgba(0,0,0,0.039);
+    transition: background 15ms;
+}
+
+.tagMenu > .tagMenu-content > div > a:focus {
+    background-color: rgba(0,0,0,0.122);
+    transition: background 75ms;
+}
+
+.tagMenu > .tagMenu-content > div > a > i {
+    font-size: 18px;
+    margin-right: 16px;
+    text-align: center;
+    width: 30px;
+}
+
+.tagMenu > .tagMenu-content > div.accept > a {
+    background: #e8f0fe;
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+#title {
+    padding: 24px 0 0 0;
+    cursor: default;
+}
+
+#title > i {
+    width: 96px;
+    height: 96px;
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 100%;
+}
+
+#title > h1 {
+    display: flex;
+    justify-content: center;
+    color: var(--color-text);
+    font-size: 28px;
+    font-weight: 400;
+    margin: 19px 0;
+}
+
+#title > div {
+    display: flex;
+    justify-content: center;
+    color: var(--color-text-2);
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 16px;
+}

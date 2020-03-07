@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý nhân viên</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <link rel="stylesheet" href="../Global-CSS.css">
+    <link rel="stylesheet" href="../Library/font/fontawesome-pro-5.12.0-web/css/all.css">
+
+    <!--setting controller-->
+    <style>
+        .tagCTL-btn {
+            position: fixed;
+            overflow: auto;
+            top: 20px;
+            right: 24px;
+        }
+
+        .tagCTL-btn > label {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            text-align: center;
+            cursor: pointer;
+            transition: .25s;
+        }
+
+        .tagCTL-btn > label:hover {
+            background-color: rgba(60, 64, 67, 0.08);
+        }
+
+        .tagCTL-btn > label:focus {
+            transition: .25s;
+            background-color: rgba(60, 64, 67, 0.1);
+            color: var(--color-text);
+        }
+
+        .tagCTL-btn > label.accept {
+            transition: .25s;
+            background-color: rgba(60, 64, 67, 0.1);
+            color: var(--color-text);
+        }
+
+        .tagCTL-btn > label > i {
+            padding: 13px 0;
+            font-size: 24px;
+            color: var(--color-text-2);
+        }
+
+        .tagCTL-btn > label.accept {
+            background-color: #E8F0FE;
+        }
+
+        .tagCTL-btn > label.accept > i {
+            color: #1A73E8;
+        }
+
+        .tagController {
+            display: none;
+            background-color: white;
+            position: fixed;
+            overflow: auto;
+            top: 80px;
+            right: 24px;
+            max-width: 300px;
+            width: 300px;
+            height: 440px;
+            transition: 0.3s;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .tagController > .tagCTL-content {
+            padding: 24px;
+            animation: animatetop 0.3s;
+        }
+    </style>
+    <!--table-->
+    <style>
+        #tablet {
+            max-width: 850px;
+            margin: 26px auto 0;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            /*padding: 26px 26px 0 26px;*/
+        }
+
+        #table > div.g, #tbody > div.g {
+            background-color: #dadce0;
+            height: 1px;
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        #theader > div.tr {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #tbody > div.tr {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #theader > div.tr > div.th:nth-child(3), #theader > div.tr > div.th:nth-child(5), #theader > div.tr > div.th:nth-child(6),
+        #theader > div.tr > div.th:nth-child(8), #theader > div.tr > div.th:nth-child(9), #theader > div.tr > div.th:nth-child(10),
+        #tbody > div.tr > div.td:nth-child(3), #tbody > div.tr > div.td:nth-child(5), #tbody > div.tr > div.td:nth-child(6),
+        #tbody > div.tr > div.td:nth-child(8), #tbody > div.tr > div.td:nth-child(9), #tbody > div.tr > div.td:nth-child(10) {
+            display: none;
+        }
+
+        #theader > div.tr, #tbody > div.tr {
+            padding: 0 20px;
+        }
+
+        #theader > div.tr > div.th:nth-child(1), #tbody > div.tr > div.td:nth-child(1) {
+            width: 16%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        #theader > div.tr > div.th:nth-child(2), #tbody > div.tr > div.td:nth-child(2) {
+            width: 56%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0 25px;
+        }
+
+        #theader > div.tr > div.th:nth-child(4), #tbody > div.tr > div.td:nth-child(4) {
+            max-width: 60px;
+            max-height: 60px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 20px;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        #theader > div.tr > div.th:nth-child(4) {
+            margin: 0;
+            max-width: 100px;
+            width: 100px;
+            border-radius: unset;
+            overflow: unset;
+        }
+
+        #theader > div.tr > div.th:nth-child(7), #tbody > div.tr > div.td:nth-child(7) {
+            width: 16%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        #theader > div.tr > div.th {
+            color: var(--color-text);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: .07272727em;
+        }
+
+        #tbody > div.tr > div.td:nth-child(1):before {
+            content: "#";
+        }
+
+        #tbody > div.tr > div.td:nth-child(2) {
+            text-transform: capitalize;
+        }
+
+        #tbody > div.tr > div.td:nth-child(4) > img {
+            width: 60px;
+            height: 60px;
+        }
+
+        /*    ccccccc*/
+
+        #tbody {
+            color: var(--color-text-2);
+        }
+
+        #tbody > div.tr:hover {
+            background-color: #F5F5F5;
+            cursor: pointer;
+        }
+
+    </style>
+    <!--mobal-->
+    <style>
+        .mobal {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.02);
+            display: none;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            z-index: 3;
+        }
+
+        .mobal > .mobal-content {
+            margin: auto;
+            background-color: #FFFFFF;
+            position: relative;
+            padding: 0;
+            outline: 0;
+            width: 600px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            animation: animatetop 0.3s;
+        }
+
+        .mobal > .mobal-content > span.close {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .mobal > .mobal-content > span.close > i {
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            color: var(--color-text-2);
+        }
+
+        .mobal > .mobal-content > span.close > i:hover {
+            color: #1a73e8;
+        }
+
+        .mobal > .mobal-content > .mobal-container {
+            padding: 24px;
+        }
+
+        .mobal > .mobal-content > .mobal-footer {
+            border-top: 1px solid #e8eaed;
+            padding: 24px;
+        }
+
+        .h1-gg {
+            color: var(--color-text);
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .h2-gg {
+            color: var(--color-text-2);
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .hr-gg {
+            color: var(--color-text-hr);
+            font-size: 18px;
+            font-weight: 400;
+            text-transform: lowercase;
+        }
+    </style>
+    <!--editNVTable-->
+    <style>
+        .editNV-table > div.tr > div.th, .editNV-table > div.tr > div.td {
+            display: inline-flex;
+        }
+
+        .editNV-table > div.tr > div.th {
+            width: 160px;
+            text-transform: uppercase;
+            font-size: 12px;
+            color: var(--color-text-2);
+        }
+
+        .editNV-table > div.tr {
+            border-top: 1px solid #e8eaed;
+            padding: 16px 0;
+            display: flex;
+        }
+
+        .editNV-table > div.tr:hover {
+            /*background-color: #F5F5F5;*/
+        }
+
+        .editNV-table > div.tr:first-child {
+            border-top: none;
+        }
+
+        .editNV-table > div.tr:first-child > div.td:before {
+            content: "#";
+        }
+
+        .editNV-table > div.tr > div.th {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .editNV-table > div.tr > div.td input[type=text] {
+            background-color: rgba(255, 255, 255, 0);
+            border: none;
+            outline: none;
+            width: 390px;
+        }
+
+        .editNV-table > div.tr > div.td input[type=text]:focus {
+            /*border: 1px solid #ebebeb;*/
+            border-radius: 8px;
+        }
+
+        .editNV-table > div.tr > div.td input[type=date] {
+            width: 390px;
+            outline: none;
+            border: none;
+            background-color: white;
+        }
+
+        .editNV-table > div.tr > div.td input[type=file] {
+            display: none;
+        }
+
+        .editNV-table > div.tr:nth-child(4) > div.td > label {
+            display: inline-flex;
+            cursor: pointer;
+        }
+
+        .editNV-table > div.tr > div.td img {
+            background-color: white;
+            width: 96px;
+            height: 96px;
+        }
+
+        .editNV-table > div.tr > div.td img:nth-child(2) {
+            border-radius: 100px;
+            margin-left: 26px;
+        }
+
+        .editNV-table > div.tr:nth-child(3) > div.td > label {
+            margin: 0 26px 0 0;
+        }
+
+        .editNV-table > div.tr:nth-child(3) > div.td > label > input[type=radio] {
+            margin-right: 5px;
+        }
+
+        .editNV-table > div.tr:nth-child(10) > div.td > label > textarea {
+            outline: none;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            max-width: 390px;
+            width: 390px;
+            height: 100px;
+        }
+
+        #btnEditNV {
+            display: flex;
+            justify-content: center;
+        }
+
+        #btnEditNV > button {
+            background-image: -webkit-linear-gradient(top, #f5f5f5, #f1f1f1);
+            background-color: #f2f2f2;
+            border: 1px solid #f2f2f2;
+            border-radius: 4px;
+            color: #5F6368;
+            font-size: 14px;
+            margin: 0 4px;
+            padding: 0 16px;
+            line-height: 27px;
+            height: 36px;
+            min-width: 54px;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        #btnEditNV > button:hover {
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+            background-image: -webkit-linear-gradient(top, #f8f8f8, #f1f1f1);
+            background-color: #f8f8f8;
+            border: 1px solid #c6c6c6;
+            color: #222;
+        }
+
+        #btnEditNV > button:focus {
+            border: 1px solid #4d90fe;
+            outline: none;
+        }
+    </style>
+    <!--tagCTLheader-->
+    <style>
+        #tagCTLheader > i {
+            width: 66px;
+            height: 66px;
+            background-color: #e8f0fe;
+            color: #1a73e8;
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            border-radius: 100%;
+        }
+
+        #tagCTLheader > h1 {
+            display: flex;
+            justify-content: center;
+            color: var(--color-text);
+            font-size: 24px;
+            font-weight: 400;
+            margin: 10px 0;
+        }
+
+        #tagCTLheader > div {
+            display: flex;
+            justify-content: center;
+            color: var(--color-text-2);
+            font-size: 13px;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        #tagCTLbody > label {
+            display: block;
+        }
+
+        #tagCTLbody > label > span {
+            display: block;
+            margin: 26px 0 0 0;
+            color: var(--color-text);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: .07272727em;
+        }
+
+        #tagCTLbody > label > input {
+            width: 100%;
+            border: none;
+            outline: unset;
+            border-bottom: 1px solid #e8eaed;
+            padding: 4px;
+            color: var(--color-text-hr);
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="tagMenu">
+    <div class="tagMenu-content">
+        <div><a href="#"><i class="far fa-home-lg"></i>Trang chủ</a></div>
+        <div><a href="quanLyPhongBan.html"><i class="far fa-building"></i>Quản lý phòng ban</a></div>
+        <div class="accept"><a href="quanLyNhanVien.html"><i class="far fa-users"></i>Quản lý nhân viên</a></div>
+        <div><a href="#"><i class="far fa-trophy-alt"></i>Thành tích / Kỷ luật</a></div>
+        <div><a href="#"><i class="fal fa-clipboard-user"></i>Tổng hợp thành tích và kỷ luật</a></div>
+    </div>
+</div>
+
+<div class="tagCTL-btn" id="tagCTLbtn">
+    <label onclick="tagCTL_btn(this, 1)"><i class="far fa-plus"></i></label>
+    <label onclick="tagCTL_btn(this, 2)"><i class="far fa-users-cog"></i></label>
+</div>
+<div class="tagController" id="tctc">
+    <div class="tagCTL-content">
+        <div id="tagCTLheader">
+            <i class="far fa-search"></i>
+            <h1>Tìm kiếm</h1>
+            <div>Công cụ tìm kiếm nhanh</div>
+        </div>
+        <div id="tagCTLbody">
+            <label>
+                <span>Mã nhân viên</span>
+                <input type="text" onkeyup="loadFilder(this)">
+            </label>
+            <label>
+                <span>Họ và tên</span>
+                <input type="text" onkeyup="loadFilder2(this)">
+            </label>
+            <label>
+                <span>Cấp độ</span>
+                <input type="text" onkeyup="loadFilder3(this)">
+            </label>
+        </div>
+    </div>
+</div>
+
+<main>
+    <div id="title" class="content">
+        <i class="far fa-users"></i>
+        <h1>Quản lý nhân viên</h1>
+        <div>Quản lý thông tin, thêm, sửa, xóa và tìm kiếm các nhân viên</div>
+    </div>
+    <div id="tablet">
+        <div id="table">
+            <div id="theader">
+                <div class="tr">
+                    <div class="th">Mã nhân viên</div>
+                    <div class="th">Họ và tên</div>
+                    <div class="th">Giới tính</div>
+                    <div class="th">Hình ảnh</div>
+                    <div class="th">Ngày sinh</div>
+                    <div class="th">Lương</div>
+                    <div class="th">Cấp độ</div>
+                    <div class="th">Email</div>
+                    <div class="th">Điện thoại</div>
+                    <div class="th">Ghi chú</div>
+                </div>
+            </div>
+            <div id="tbody">
+                <div class="g"></div>
+                <div class="tr" onclick="editNVOpen(this)">
+                    <div class="td">0001</div>
+                    <div class="td">Trần Quang Đức</div>
+                    <div class="td">Nam</div>
+                    <div class="td"><img
+                            src="https://image.shutterstock.com/image-vector/example-stamp-260nw-426673501.jpg" alt="">
+                    </div>
+                    <div class="td">2000-09-27</div>
+                    <div class="td">999999999000</div>
+                    <div class="td">10</div>
+                    <div class="td">tranquangduc000@gmail.com</div>
+                    <div class="td">0969080235</div>
+                    <div class="td">Ghi ghi cái quần què</div>
+                </div>
+                <div class="g"></div>
+                <div class="tr" onclick="editNVOpen(this)">
+                    <div class="td">0002</div>
+                    <div class="td">Mai Anh Đức</div>
+                    <div class="td">Nam</div>
+                    <div class="td"><img
+                            src="https://image.shutterstock.com/image-vector/example-stamp-260nw-426673501.jpg" alt="">
+                    </div>
+                    <div class="td">2000-09-27</div>
+                    <div class="td">12876312</div>
+                    <div class="td">6</div>
+                    <div class="td">tranquangduc27092000@gmail.com</div>
+                    <div class="td">0376585639</div>
+                    <div class="td">Ghi ghi cái quần què</div>
+                </div>
+                <div class="g"></div>
+                <div class="tr" onclick="editNVOpen(this)">
+                    <div class="td">0003</div>
+                    <div class="td">Alex</div>
+                    <div class="td">Nữ</div>
+                    <div class="td"><img
+                            src="https://image.shutterstock.com/image-vector/example-stamp-260nw-426673501.jpg" alt="">
+                    </div>
+                    <div class="td">2000-09-27</div>
+                    <div class="td">1287ada6312</div>
+                    <div class="td">8</div>
+                    <div class="td">alex@gmail.com</div>
+                    <div class="td">0624732162</div>
+                    <div class="td">Ghi ghi cái quần què</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div id="editNV" class="mobal">
+    <div class="mobal-content">
+        <span class="close"><i class="far fa-times-hexagon"
+                               onclick="closeNV()"></i></span>
+        <div class="mobal-container">
+            <h1 class="h1-gg">Thông tin của <label>Trần Quang Đức</label></h1>
+            <div class="editNV-table">
+                <div class="tr">
+                    <div class="th">Mã nhân viên</div>
+                    <div class="td"><label><input type="text"></label></div>
+                </div>
+                <div class="tr">
+                    <div class="th">Họ và tên</div>
+                    <div class="td"><label><input type="text"></label></div>
+                </div>
+                <div class="tr">
+                    <div class="th">Giới tính</div>
+                    <div class="td">
+                        <label><input id="rdoNam" type="radio" name="sex" value="Nam">Nam</label>
+                        <label><input id="rdoNu" type="radio" name="sex" value="Nữ">Nữ</label>
+                        <label><input id="rdoKhac" type="radio" name="sex" value="Khác">Khác</label>
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="th">Hình ảnh</div>
+                    <div class="td">
+                        <label for="fileImage" id="imageEdit">
+                            <img src="" alt="">
+                            <img src="" alt="">
+                        </label>
+                        <input id="fileImage" type="file" onchange="loadImage(this)">
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="th">Ngày sinh</div>
+                    <div class="td">
+                        <label>
+                            <input type="date">
+                        </label>
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="th">Lương</div>
+                    <div class="td">
+                        <label><input type="text"></label>
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="th">Cấp độ</div>
+                    <div class="td">
+                        <label><input type="text"></label>
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="th">Email</div>
+                    <div class="td">
+                        <label><input type="text"></label>
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="th">Điện thoại</div>
+                    <div class="td">
+                        <label><input type="text"></label>
+                    </div>
+                </div>
+                <div class="tr">
+                    <div class="th">Ghi chú</div>
+                    <div class="td">
+                        <label><textarea></textarea></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobal-footer">
+            <div id="btnEditNV">
+                <button>Thêm</button>
+                <button>Sửa</button>
+                <button>Xóa</button>
+                <button onclick="closeNV()">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var tagEditNV = document.getElementById("editNV");
+    var tittleNV = tagEditNV.children[0].children[1].children[0];
+    var mnv = tagEditNV.children[0].children[1].children[1].children[0].children[1].children[0].children[0];
+    var hoVaTen = tagEditNV.children[0].children[1].children[1].children[1].children[1].children[0].children[0];
+    var gioiTinhNam = tagEditNV.children[0].children[1].children[1].children[2].children[1].children[0].children[0];
+    var gioiTinhNu = tagEditNV.children[0].children[1].children[1].children[2].children[1].children[1].children[0];
+    var gioiTinhKhac = tagEditNV.children[0].children[1].children[1].children[2].children[1].children[2].children[0];
+    var image = tagEditNV.children[0].children[1].children[1].children[3].children[1].children[0].children[0];
+    var image2 = tagEditNV.children[0].children[1].children[1].children[3].children[1].children[0].children[1];
+    var date = tagEditNV.children[0].children[1].children[1].children[4].children[1].children[0].children[0];
+    var luong = tagEditNV.children[0].children[1].children[1].children[5].children[1].children[0].children[0];
+    var capDo = tagEditNV.children[0].children[1].children[1].children[6].children[1].children[0].children[0];
+    var email = tagEditNV.children[0].children[1].children[1].children[7].children[1].children[0].children[0];
+    var dienThoai = tagEditNV.children[0].children[1].children[1].children[8].children[1].children[0].children[0];
+    var ghiChu = tagEditNV.children[0].children[1].children[1].children[9].children[1].children[0].children[0];
+    var tggSS = false;
+    var tctc = document.getElementById("tctc");
+    var tagCTLbody = document.getElementById("tagCTLbody");
+
+    function editNVOpen(val) {
+        tittleNV.innerHTML = "Thông tin của <label>" + val.children[1].innerHTML + "</label>";
+        mnv.value = val.children[0].innerHTML;
+        hoVaTen.value = val.children[1].innerHTML;
+        if (val.children[2].innerText === "Nam") {
+            gioiTinhNam.checked = true;
+        } else if (val.children[2].innerText === "Nữ") {
+            gioiTinhNu.checked = true;
+        } else {
+            gioiTinhKhac.checked = true;
+        }
+        var getImage = val.children[3].children[0].src;
+        image.src = getImage;
+        image2.src = getImage;
+        date.value = val.children[4].innerHTML;
+        luong.value = val.children[5].innerHTML;
+        capDo.value = val.children[6].innerHTML;
+        email.value = val.children[7].innerHTML;
+        dienThoai.value = val.children[8].innerHTML;
+        ghiChu.value = val.children[9].innerHTML;
+
+        document.getElementById("btnEditNV").children[0].style.display = "none";
+        document.getElementById("btnEditNV").children[1].style.display = "block";
+        document.getElementById("btnEditNV").children[2].style.display = "block";
+        tagEditNV.style.display = "block";
+
+        document.getElementById("tagCTLbtn").children[0].classList.remove("accept");
+        document.getElementById("tagCTLbtn").children[1].classList.remove("accept");
+        tctc.style.display = "none";
+        tggSS = false;
+    }
+
+    function loadImage(val) {
+        var img = document.getElementById("imageEdit").children[0];
+        var img2 = document.getElementById("imageEdit").children[1];
+        var file = val.files[0];
+        var reader = new FileReader();
+
+        reader.addEventListener("load", function () {
+            img.src = reader.result;
+            img2.src = reader.result;
+        }, false);
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+
+    function closeNV() {
+        tagEditNV.style.display = "none";
+        document.getElementById("btnEditNV").children[0].style.display = "none";
+        document.getElementById("tagCTLbtn").children[0].classList.remove("accept");
+    }
+
+    function tagCTL_btn(val, acc) {
+        for (var i = 0; i < val.parentElement.children.length; i++) {
+            val.parentElement.children[i].classList.remove("accept");
+        }
+        if (acc === 1) {
+            tittleNV.innerHTML = "Thêm mới nhân viên";
+            mnv.value = null;
+            hoVaTen.value = null;
+            gioiTinhNam.checked = false;
+            gioiTinhNu.checked = false;
+            gioiTinhKhac.checked = false;
+            image.src = null;
+            image2.src = null;
+            date.value = null;
+            luong.value = null;
+            capDo.value = null;
+            email.value = null;
+            dienThoai.value = null;
+            ghiChu.value = null;
+            document.getElementById("btnEditNV").children[0].style.display = "block";
+            document.getElementById("btnEditNV").children[1].style.display = "none";
+            document.getElementById("btnEditNV").children[2].style.display = "none";
+            tagEditNV.style.display = "block";
+            val.classList.add("accept");
+            tctc.style.display = "none";
+            tggSS = false;
+        } else if (acc === 2 && tggSS === false) {
+            closeNV();
+            tctc.style.display = "block";
+            tggSS = true;
+            val.classList.add("accept");
+        } else if (acc === 2 && tggSS === true) {
+            closeNV();
+            tctc.style.display = "none";
+
+            tggSS = false;
+            val.classList.remove("accept");
+        }
+    }
+
+    function loadFilder(val) {
+        tagCTLbody.children[1].children[1].value = null;
+        tagCTLbody.children[2].children[1].value = null;
+        var input, filter, table, tr, td, i, g;
+        input = val;
+        filter = input.value.toUpperCase();
+        table = document.getElementById("tbody");
+        tr = table.getElementsByClassName("tr");
+        g = table.getElementsByClassName("g");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByClassName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    g[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                    g[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    function loadFilder2(val) {
+        tagCTLbody.children[0].children[1].value = null;
+        tagCTLbody.children[2].children[1].value = null;
+        var input, filter, table, tr, td, i, g;
+        input = val;
+        filter = input.value.toUpperCase();
+        table = document.getElementById("tbody");
+        tr = table.getElementsByClassName("tr");
+        g = table.getElementsByClassName("g");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByClassName("td")[1];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    g[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                    g[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    function loadFilder3(val) {
+        tagCTLbody.children[0].children[1].value = null;
+        tagCTLbody.children[1].children[1].value = null;
+        var input, filter, table, tr, td, i, g;
+        input = val;
+        filter = input.value.toUpperCase();
+        table = document.getElementById("tbody");
+        tr = table.getElementsByClassName("tr");
+        g = table.getElementsByClassName("g");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByClassName("td")[6];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                    g[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                    g[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
