@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thành tích và kỷ luật</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <link rel="stylesheet" href="../Global-CSS.css">
+    <link rel="stylesheet" href="../Library/font/fontawesome-pro-5.12.0-web/css/all.css">
+
+    <style>
+        #ttklContent {
+            /*background-color: #15ad76;*/
+            max-width: 840px;
+            margin: 26px auto;
+            border-radius: 16px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+        }
+
+        .btnToggle {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 50px;
+            overflow: hidden;
+            border: 1px solid #dadce0;
+            /*border-bottom: none;*/
+            border-radius: 16px 16px 0 0;
+        }
+
+        .btnToggle > label:nth-child(1), .btnToggle > label:nth-child(2) {
+            width: 400px;
+            height: 100%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            color: var(--color-text-2);
+            font-size: 18px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: .07272727em;
+            cursor: pointer;
+        }
+
+        .btnToggle > label:nth-child(1).accept, .btnToggle > label:nth-child(2).accept {
+            color: var(--color-text-hr);
+            transition: 0.2s;
+        }
+
+        .btnToggle > span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 100%;
+            background: #e8f0fe;
+            z-index: 1;
+            transition: .3s;
+            border-bottom: solid 3px #4284f3;
+            transform: translateX(0px);
+        }
+    </style>
+    <style>
+        #parTagTGG {
+            position: relative;
+            width: 840px;
+            height: 450px;
+            overflow: hidden;
+            border: 1px solid #dadce0;
+            border-radius: 0 0 16px 16px;
+        }
+
+        #tagTgg1, #tagTgg2 {
+            height: 100%;
+            width: 840px;
+            display: inline-table;
+            position: absolute;
+            transition: 0.3s;
+            overflow: hidden;
+        }
+
+        #tagTgg1 {
+            top: 0;
+            left: 0;
+            padding: 26px;
+            background-image: url("../Library/Image/dhjnasdjkhf.png");
+            background-size: 160px 160px;
+            background-repeat: no-repeat;
+            background-position-x: -62px;
+            background-position-y: 300px;
+        }
+
+        #tagTgg1 > .tagTGGFilter, #tagTgg2 > .tagTGGFilter {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #tagTgg1 > .tagTGGFilter > img, #tagTgg2 > .tagTGGFilter > img {
+            position: absolute;
+        }
+
+        #tagTgg2 {
+            top: 0;
+            left: 840px;
+            padding: 26px;
+            background-image: url("../Library/Image/dhjnasdjkhf.png");
+            background-size: 160px 160px;
+            background-repeat: no-repeat;
+            background-position-x: 735px;
+            background-position-y: -25px;
+        }
+    </style>
+    <style>
+        #tagTgg1 > .tagTGGContent, #tagTgg2 > .tagTGGContent {
+            position: relative;
+        }
+
+        #tagTgg1 > .tagTGGContent > label > span {
+            color: var(--color-text-2);
+            font-size: 13px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: .07272727em;
+            display: block;
+        }
+
+        #tagTgg1 > .tagTGGContent > label:nth-child(1), #tagTgg2 > .tagTGGContent > label:nth-child(1) {
+            position: absolute;
+            top: 20px;
+            left: 26px;
+            display: none;
+        }
+
+        #tagTgg1 > .tagTGGContent > label:nth-child(1) > span, #tagTgg1 > .tagTGGContent > label:nth-child(2) > span,
+        #tagTgg1 > .tagTGGContent > label:nth-child(6) > span {
+            margin: 0 0 5px 0;
+        }
+
+        #tagTgg1 > .tagTGGContent > label:nth-child(1) > select, #tagTgg1 > .tagTGGContent > label:nth-child(2) > select,
+        #tagTgg1 > .tagTGGContent > label:nth-child(6) > input[type=date] {
+            width: 200px;
+            border: none;
+            border-bottom: 2px solid #dadce0;
+            outline: none;
+            padding: 4px 0;
+        }
+
+        #tagTgg1 > .tagTGGContent > label:nth-child(2) {
+            position: absolute;
+            top: 120px;
+            left: 26px;
+        }
+
+        #tagTgg1 > .tagTGGContent > label:nth-child(3) {
+            position: absolute;
+            top: 0;
+            left: 560px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+        }
+
+        #tagTgg1 > .tagTGGContent > label:nth-child(3) > img {
+            width: 100px;
+            height: 100px;
+        }
+
+        #tagTgg1 > .tagTGGContent > label:nth-child(4) {
+            position: absolute;
+            top: 120px;
+            right: 0;
+            color: var(--color-text);
+            text-align: center;
+            display: block;
+            width: 350px;
+            text-transform: capitalize;
+            font-size: 22px;
+            font-weight: 400;
+            overflow: hidden;
+            word-break: break-word;
+            word-wrap: break-word;
+        }
+
+        #tagTgg1 > .tagTGGContent > label:nth-child(5) {
+            position: absolute;
+            top: 200px;
+            right: 0;
+            width: 350px;
+        }
+
+        #tagTgg1 > .tagTGGContent > label:nth-child(5) > textarea {
+            max-width: 350px;
+            max-height: 180px;
+            width: 100%;
+            height: 180px;
+            outline: none;
+            color: var(--color-text-2);
+            font-size: 14px;
+            font-weight: 100;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 5px;
+        }
+
+        #tagTgg1 > .tagTGGContent > label:nth-child(5) > span {
+            text-align: center;
+            font-size: 11px;
+            margin: 0 0 5px 0;
+        }
+
+        #tagTgg1 > .tagTGGContent > label:nth-child(6) {
+            position: absolute;
+            top: 230px;
+            left: 120px;
+        }
+
+        #tagTgg1 > .tagTGGContent > label:nth-child(7) {
+            position: absolute;
+            top: 335px;
+            left: 190px;
+        }
+    </style>
+    <style>
+        #tagTgg2 > div.tagTGGContent > label:nth-child(2) {
+            position: absolute;
+            top: 25px;
+            left: 140px;
+        }
+
+        #tagTgg2 > div.tagTGGContent > label:nth-child(2) > span, #tagTgg2 > div.tagTGGContent > label:nth-child(6) > span {
+            color: var(--color-text-2);
+            font-size: 13px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: .07272727em;
+            display: block;
+        }
+
+        #tagTgg2 > div.tagTGGContent > label:nth-child(2) > select, #tagTgg2 > div.tagTGGContent > label:nth-child(6) > input[type=date] {
+            width: 200px;
+            border: none;
+            border-bottom: 2px solid #dadce0;
+            outline: none;
+            padding: 4px 0;
+        }
+
+        #tagTgg2 > div.tagTGGContent > label:nth-child(6) {
+            position: absolute;
+            top: 330px;
+            right: 30px;
+        }
+
+        #tagTgg2 > div.tagTGGContent > label:nth-child(7) {
+            position: absolute;
+            top: 350px;
+            right: 280px;
+        }
+
+        #tagTgg2 > div.tagTGGContent > label:nth-child(3) {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+        }
+
+        #tagTgg2 > div.tagTGGContent > label:nth-child(3) > img {
+            width: 100px;
+            height: 100px;
+        }
+
+        #tagTgg2 > div.tagTGGContent > label:nth-child(4) {
+            position: absolute;
+            top: 85px;
+            left: 140px;
+            color: var(--color-text);
+            text-align: left;
+            display: block;
+            width: 350px;
+            text-transform: capitalize;
+            font-size: 22px;
+            font-weight: 400;
+            overflow: hidden;
+            word-break: break-word;
+            word-wrap: break-word;
+        }
+
+        #tagTgg2 > div.tagTGGContent > label:nth-child(5) {
+            position: absolute;
+            top: 180px;
+            left: 20px;
+            max-width: 350px;
+            width: 320px;
+        }
+
+        #tagTgg2 > div.tagTGGContent > label:nth-child(5) > span {
+            text-align: center;
+            font-size: 11px;
+            margin: 0 0 5px 0;
+            color: var(--color-text-2);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: .07272727em;
+            display: block;
+        }
+
+        #tagTgg2 > div.tagTGGContent > label:nth-child(5) > textarea {
+            max-width: 350px;
+            max-height: 180px;
+            width: 100%;
+            height: 180px;
+            outline: none;
+            color: var(--color-text-2);
+            font-size: 14px;
+            font-weight: 100;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 5px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="tagMenu">
+    <div class="tagMenu-content">
+        <div><a href="#"><i class="far fa-home-lg"></i>Trang chủ</a></div>
+        <div><a href="quanLyPhongBan.html"><i class="far fa-building"></i>Quản lý phòng ban</a></div>
+        <div><a href="quanLyNhanVien.html"><i class="far fa-users"></i>Quản lý nhân viên</a></div>
+        <div class="accept"><a href="thanhTichVaKyLuat.html"><i class="fal fa-clipboard-user"></i>Thành tích / Kỷ
+            luật</a></div>
+        <div><a href="#"><i class="far fa-trophy-alt"></i>Tổng hợp thành tích và kỷ luật</a></div>
+    </div>
+</div>
+
+<form id="formThanhTich" method="get"></form>
+<form id="formKyLuat" method="get"></form>
+<main>
+    <div id="title" class="content">
+        <i class="fal fa-clipboard-user"></i>
+        <h1>Thành tích / Kỷ luật</h1>
+        <div>Ghi nhận thành tích và kỷ luật của nhân viên</div>
+    </div>
+    <div id="ttklContent">
+        <div class="btnToggle">
+            <label class="accept" onclick="btnTGGa(this)">Thành tích</label>
+            <label onclick="btnTGGa(this)">Kỷ luật</label>
+            <span></span>
+        </div>
+        <div id="parTagTGG">
+            <div id="tagTgg1">
+                <div class="tagTGGContent">
+                    <label>
+                        <span>Phòng ban</span>
+                        <select></select>
+                    </label>
+                    <label>
+                        <span>Mã nhân viên</span>
+                        <select onchange="loadData(this)" form="formThanhTich" required name="maNV"></select>
+                    </label>
+                    <label><img src="" alt=""></label>
+                    <label>Tên Nhân Viên</label>
+                    <label><span>Lý do</span><textarea form="formThanhTich" name="notes"></textarea></label>
+                    <label><span>Ngày ghi nhận</span><input type="date" form="formThanhTich" required name="date"></label>
+                    <label>
+                        <button type="submit" class="btnGG" form="formThanhTich">Ghi Nhận</button>
+                    </label>
+                </div>
+                <div class="tagTGGFilter">
+                    <img src="" alt="">
+                </div>
+            </div>
+
+            <div id="tagTgg2">
+                <div class="tagTGGContent">
+                    <label>
+                        <span>Phòng ban</span>
+                        <select></select>
+                    </label>
+                    <label>
+                        <span>Mã nhân viên</span>
+                        <select onchange="loadData2(this)" form="formKyLuat" required name="maNV"></select>
+                    </label>
+                    <label><img src="" alt=""></label>
+                    <label>Tên Nhân Viên</label>
+                    <label><span>Lý do</span><textarea form="formKyLuat" name="notes"></textarea></label>
+                    <label><span style="text-align: right;">Ngày ghi nhận</span><input type="date" form="formKyLuat" required name="date"></label>
+                    <label>
+                        <button type="submit" class="btnGG" form="formKyLuat">Ghi Nhận</button>
+                    </label>
+                </div>
+                <div class="tagTGGFilter">
+                    <img src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!--data Table-->
+<table id="dataTable" style="display: none">
+    <thead>
+    <tr>
+        <th>Mã nhân viên</th>
+        <th>Tên nhân viên</th>
+        <th>Ảnh</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>0001</td>
+        <td>Trần Quang Đức</td>
+        <td>https://image.shutterstock.com/image-vector/example-stamp-260nw-426673501.jpg</td>
+    </tr>
+    <tr>
+        <td>0002</td>
+        <td>Mai Anh Đức</td>
+        <td>https://pbs.twimg.com/profile_images/823569976342773760/c2RLAG7h_400x400.jpg</td>
+    </tr>
+    <tr>
+        <td>0003</td>
+        <td>Thục Thảo Nhi</td>
+        <td>https://pbs.twimg.com/profile_images/378800000017423279/1a6d6f295da9f97bb576ff486ed81389_400x400.png</td>
+    </tr>
+    </tbody>
+</table>
+<!--data Table2-->
+<table id="dataTable2" style="display: none">
+    <thead>
+    <tr>
+        <th>Mã nhân viên</th>
+        <th>Tên nhân viên</th>
+        <th>Ảnh</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>0001</td>
+        <td>Trần Quang Đức</td>
+        <td>https://image.shutterstock.com/image-vector/example-stamp-260nw-426673501.jpg</td>
+    </tr>
+    <tr>
+        <td>0002</td>
+        <td>Mai Anh Đức</td>
+        <td>https://pbs.twimg.com/profile_images/823569976342773760/c2RLAG7h_400x400.jpg</td>
+    </tr>
+    <tr>
+        <td>0003</td>
+        <td>Thục Thảo Nhi</td>
+        <td>https://pbs.twimg.com/profile_images/378800000017423279/1a6d6f295da9f97bb576ff486ed81389_400x400.png</td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+    var tagTGG1 = document.getElementById("tagTgg1");
+    var tagTGG2 = document.getElementById("tagTgg2");
+    var ttklContent = document.getElementById("ttklContent");
+    var table1 = document.getElementById("dataTable");
+    var table2 = document.getElementById("dataTable2");
+
+
+    function btnTGGa(val) {
+        if (val.innerHTML === "Thành tích") {
+            val.classList.add("accept");
+            val.parentElement.children[1].classList.remove("accept");
+            val.parentElement.children[2].style.transform = "translateX(0px)";
+            tagTGG1.style.transform = "translateX(0px)";
+            tagTGG2.style.transform = "translateX(0px)";
+        } else if (val.innerHTML === "Kỷ luật") {
+            val.classList.add("accept");
+            val.parentElement.children[0].classList.remove("accept");
+            val.parentElement.children[2].style.transform = "translateX(438px)";
+            tagTGG1.style.transform = "translateX(-840px)";
+            tagTGG2.style.transform = "translateX(-840px)";
+        }
+    }
+
+    function btnTGGb(val) {
+        if (val === "Thành tích") {
+            var vvv = ttklContent.children[0].children[0];
+            vvv.classList.add("accept");
+            vvv.parentElement.children[1].classList.remove("accept");
+            vvv.parentElement.children[2].style.transform = "translateX(0px)";
+            tagTGG1.style.transform = "translateX(0px)";
+            tagTGG2.style.transform = "translateX(0px)";
+        } else if (val === "Kỷ luật") {
+            var vvv = ttklContent.children[0].children[1];
+            vvv.classList.add("accept");
+            vvv.parentElement.children[0].classList.remove("accept");
+            vvv.parentElement.children[2].style.transform = "translateX(438px)";
+            tagTGG1.style.transform = "translateX(-840px)";
+            tagTGG2.style.transform = "translateX(-840px)";
+        }
+    }
+
+    function loadData(val) {
+        var valu = val.value;
+        var setImage = val.parentElement.parentElement.children[2].children[0];
+        var setName = val.parentElement.parentElement.children[3];
+        var setLyDo = val.parentElement.parentElement.children[4].children[1];
+        var setDate = val.parentElement.parentElement.children[5].children[1];
+        var tr = table1.children[1].children;
+        for (var i = 0; i < tr.length; i++) {
+            if (valu === tr[i].children[0].innerHTML) {
+                setName.innerHTML = tr[i].children[1].innerHTML;
+                setImage.src = tr[i].children[2].innerHTML;
+                setLyDo.value = null;
+                setDate.value = null;
+                return;
+            }
+        }
+    }
+
+    function loadData2(val) {
+        var valu = val.value;
+        var setImage = val.parentElement.parentElement.children[2].children[0];
+        var setName = val.parentElement.parentElement.children[3];
+        var setLyDo = val.parentElement.parentElement.children[4].children[1];
+        var setDate = val.parentElement.parentElement.children[5].children[1];
+        var tr = table1.children[1].children;
+        for (var i = 0; i < tr.length; i++) {
+            if (valu === tr[i].children[0].innerHTML) {
+                setName.innerHTML = tr[i].children[1].innerHTML;
+                setImage.src = tr[i].children[2].innerHTML;
+                setLyDo.value = null;
+                setDate.value = null;
+                return;
+            }
+        }
+    }
+
+    function loadCBB1() {
+        var cbb = tagTGG1.children[0].children[1].children[1];
+        var tr = table1.children[1].children;
+        for (var i = 0; i < tr.length; i++) {
+            var option = document.createElement("option");
+            option.value = tr[i].children[0].innerHTML;
+            option.text = tr[i].children[0].innerHTML;
+            cbb.add(option);
+        }
+        tagTGG1.children[0].children[2].children[0].src = table1.children[1].children[0].children[2].innerHTML;
+        tagTGG1.children[0].children[3].innerHTML = table1.children[1].children[0].children[1].innerHTML;
+    }
+
+    function loadCBB2() {
+        var cbb = tagTGG2.children[0].children[1].children[1];
+        var tr = table2.children[1].children;
+        for (var i = 0; i < tr.length; i++) {
+            var option = document.createElement("option");
+            option.value = tr[i].children[0].innerHTML;
+            option.text = tr[i].children[0].innerHTML;
+            cbb.add(option);
+        }
+        tagTGG2.children[0].children[2].children[0].src = table2.children[1].children[0].children[2].innerHTML;
+        tagTGG2.children[0].children[3].innerHTML = table2.children[1].children[0].children[1].innerHTML;
+    }
+
+    loadCBB1();
+    loadCBB2();
+
+    //Thành tích | Kỷ luật
+    btnTGGb("Thành tích");
+</script>
+
+</body>
+</html>
