@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="530b10cc-daf8-4f8f-a7d1-cb128bdf5e07" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/quanLyNhanVien.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/quanLyPhongBan.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/phongban.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Global-CSS.css" beforeDir="false" afterPath="$PROJECT_DIR$/Global-CSS.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/quanLyNhanVien.html" beforeDir="false" afterPath="$PROJECT_DIR$/Content/quanLyNhanVien.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +95,7 @@
       <workItem from="1582297504151" duration="11438000" />
       <workItem from="1582366764047" duration="405000" />
       <workItem from="1583471049875" duration="49824000" />
-      <workItem from="1583553437641" duration="14802000" />
+      <workItem from="1583553437641" duration="17599000" />
     </task>
     <servers />
   </component>

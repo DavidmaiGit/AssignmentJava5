@@ -324,6 +324,20 @@
             display: none;
         }
 
+        .editNV-table > div.tr > div.td input[type=number] {
+            background-color: rgba(255, 255, 255, 0);
+            border: none;
+            outline: none;
+            width: 390px;
+        }
+
+        .editNV-table > div.tr > div.td input[type=email] {
+            background-color: rgba(255, 255, 255, 0);
+            border: none;
+            outline: none;
+            width: 390px;
+        }
+
         .editNV-table > div.tr:nth-child(4) > div.td > label {
             display: inline-flex;
             cursor: pointer;
@@ -446,6 +460,14 @@
             padding: 4px;
             color: var(--color-text-hr);
         }
+
+        #tagCTLbody > label:nth-child(1) > input {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGU2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIwLTAzLTA3VDE1OjM5OjA1KzA3OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIwLTAzLTA3VDE1OjM5OjA1KzA3OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMC0wMy0wN1QxNTozOTowNSswNzowMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpkNDBiNWRlNS00NDkwLTIwNGQtOTUzZS1lYzY4ZTZjZjIxMDYiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo4ZTI1ZDIzNy1hZWQ4LTMzNDItOTE2Mi1iMDY3YTRhYzE1ODciIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3YzZjMjc3OC1iMmRhLTExNGEtOWQ0Yi0xYmRkZWEwMzg2ZWEiIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo3YzZjMjc3OC1iMmRhLTExNGEtOWQ0Yi0xYmRkZWEwMzg2ZWEiIHN0RXZ0OndoZW49IjIwMjAtMDMtMDdUMTU6Mzk6MDUrMDc6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZDQwYjVkZTUtNDQ5MC0yMDRkLTk1M2UtZWM2OGU2Y2YyMTA2IiBzdEV2dDp3aGVuPSIyMDIwLTAzLTA3VDE1OjM5OjA1KzA3OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDxwaG90b3Nob3A6VGV4dExheWVycz4gPHJkZjpCYWc+IDxyZGY6bGkgcGhvdG9zaG9wOkxheWVyTmFtZT0i74qSIiBwaG90b3Nob3A6TGF5ZXJUZXh0PSLvipIiLz4gPC9yZGY6QmFnPiA8L3Bob3Rvc2hvcDpUZXh0TGF5ZXJzPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqRDacMAAAJfSURBVGiB3VrLccIwFFyYNEBOGh/TAi0kJZASkgJ8gBKSgwpISggt0IJLCEeNb5RADjgzGGztOnpm5OwtI/Oyy/v4vSdmx+MR/wGzVANFWS8AfABY9DyyCd5VxMYSwLrHxgHAa/DuELNxJ3BleAGwipyvATwn2qgAvMcMzMk/UPBAzvs8NcQGxS2ERMOqwSM5j4YVYCOEkdjHDouyVrwRtQEkCmmSNJUEtRG827FnUj1Cv02BBLNBvQGML0TJD+YRxUayEEZC+TYnIUQhMYnQYhWLVTxgbI8YkVCKheSRq16r6Z2UsvqIU/sRwxM5X+HUnvShArBhRIJ3u5aQoqxXAL7YBzNEdRlaSrjkiOWlECWkssS/FTJV7C6FSDU7Q+y6yq+S8G+Ih6FSNj8Qf498AtgKXPbBu/3VqKu0zEVZs0e2zI4wh1QKl1/8NUeSmkVxjhkU5oOF3HCYGleIEQm2kBhcdP4ixIIEKyg3EWJBwmQGOccYocUSfQGbEbmFQUIaEqmhZVEsrjDUIxZlk9k4qMPUOe4A+W0OaG3+krwwaWiKfPbngmdFWa9xajmmhkPw7v73jzmm27q3cnUOg014DpiyR1ob+ikPVq3qOMep758iWrzlO8SirL8Qvx7bBu+iV2xFWX8jnpOb4F30iq0PQ0Irmz1vF4YIyWbP2wVJSG573i6oHlGGKUaCCZHn8y6oQljHq5CwuBTqhZVHLK7YshASvQdvVj/mc/o5qBAjEko/N64QIxI0rNiPZhgUIaOTQGJ+AJoQRtJi8Z1UegHhZ07Bu89m6ZBCgjWmyY3rD51FsnxFlBnyAAAAAElFTkSuQmCC');
+            background-repeat: no-repeat;
+            background-size: 11px;
+            background-position: left;
+            padding: 0 0 0 14px;
+        }
     </style>
 
 </head>
@@ -562,6 +584,7 @@
     </div>
 </main>
 
+<form id="formNV"></form>
 <div id="editNV" class="mobal">
     <div class="mobal-content">
         <span class="close"><i class="far fa-times-hexagon"
@@ -571,18 +594,18 @@
             <div class="editNV-table">
                 <div class="tr">
                     <div class="th">Mã nhân viên</div>
-                    <div class="td"><label><input type="text"></label></div>
+                    <div class="td"><label><input type="text" form="formNV" required></label></div>
                 </div>
                 <div class="tr">
                     <div class="th">Họ và tên</div>
-                    <div class="td"><label><input type="text"></label></div>
+                    <div class="td"><label><input type="text" form="formNV" required></label></div>
                 </div>
                 <div class="tr">
                     <div class="th">Giới tính</div>
                     <div class="td">
-                        <label><input id="rdoNam" type="radio" name="sex" value="Nam">Nam</label>
-                        <label><input id="rdoNu" type="radio" name="sex" value="Nữ">Nữ</label>
-                        <label><input id="rdoKhac" type="radio" name="sex" value="Khác">Khác</label>
+                        <label><input id="rdoNam" type="radio" name="sex" value="Nam" form="formNV" checked>Nam</label>
+                        <label><input id="rdoNu" type="radio" name="sex" value="Nữ" form="formNV">Nữ</label>
+                        <label><input id="rdoKhac" type="radio" name="sex" value="Khác" form="formNV">Khác</label>
                     </div>
                 </div>
                 <div class="tr">
@@ -593,53 +616,54 @@
                             <img src="" alt="">
                         </label>
                         <input id="fileImage" type="file" onchange="loadImage(this)">
+                        <label style="display: none"><input id="Image" type="text" form="formNV"></label>
                     </div>
                 </div>
                 <div class="tr">
                     <div class="th">Ngày sinh</div>
                     <div class="td">
                         <label>
-                            <input type="date">
+                            <input type="date" form="formNV" required>
                         </label>
                     </div>
                 </div>
                 <div class="tr">
                     <div class="th">Lương</div>
                     <div class="td">
-                        <label><input type="text"></label>
+                        <label><input type="number" form="formNV" min="0"></label>
                     </div>
                 </div>
                 <div class="tr">
                     <div class="th">Cấp độ</div>
                     <div class="td">
-                        <label><input type="text"></label>
+                        <label><input type="number" form="formNV" max="10" min="1"></label>
                     </div>
                 </div>
                 <div class="tr">
                     <div class="th">Email</div>
                     <div class="td">
-                        <label><input type="text"></label>
+                        <label><input type="email" form="formNV"></label>
                     </div>
                 </div>
                 <div class="tr">
                     <div class="th">Điện thoại</div>
                     <div class="td">
-                        <label><input type="text"></label>
+                        <label><input type="text" form="formNV"></label>
                     </div>
                 </div>
                 <div class="tr">
                     <div class="th">Ghi chú</div>
                     <div class="td">
-                        <label><textarea></textarea></label>
+                        <label><textarea form="formNV"></textarea></label>
                     </div>
                 </div>
             </div>
         </div>
         <div class="mobal-footer">
             <div id="btnEditNV">
-                <button>Thêm</button>
-                <button>Sửa</button>
-                <button>Xóa</button>
+                <button type="submit" form="formNV">Thêm</button>
+                <button type="submit" form="formNV">Sửa</button>
+                <button type="submit" form="formNV">Xóa</button>
                 <button onclick="closeNV()">Đóng</button>
             </div>
         </div>
@@ -701,12 +725,14 @@
     function loadImage(val) {
         var img = document.getElementById("imageEdit").children[0];
         var img2 = document.getElementById("imageEdit").children[1];
+        var intp = val.parentElement.children[2].children[0];
         var file = val.files[0];
         var reader = new FileReader();
 
         reader.addEventListener("load", function () {
             img.src = reader.result;
             img2.src = reader.result;
+            intp.value = reader.result;
         }, false);
 
         if (file) {
@@ -728,7 +754,7 @@
             tittleNV.innerHTML = "Thêm mới nhân viên";
             mnv.value = null;
             hoVaTen.value = null;
-            gioiTinhNam.checked = false;
+            gioiTinhNam.checked = true;
             gioiTinhNu.checked = false;
             gioiTinhKhac.checked = false;
             image.src = null;
