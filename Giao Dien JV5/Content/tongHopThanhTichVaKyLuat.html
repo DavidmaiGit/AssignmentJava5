@@ -9,12 +9,387 @@
 
     <style>
         #thttvkl {
+            position: relative;
+            z-index: 1;
             margin: 26px auto;
-            background-color: #15ad76;
             max-width: 840px;
         }
-    </style>
 
+        #nhanVien, #phongBan {
+            border-radius: 16px;
+            border: 1px solid #dadce0;
+            background-color: white;
+        }
+
+        #nhanVien > div#dataTableHeader {
+            display: inline-flex;
+            width: 100%;
+            padding: 15px 0 15px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #nhanVien > div#dataTableHeader > div {
+            font-size: 12px;
+            color: var(--color-text-hr);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: .07272727em;
+            cursor: default;
+        }
+
+        #nhanVien > div#dataTableHeader > div:nth-child(1), #nhanVien > div#dataTable > table > tbody > tr > td:nth-child(1) {
+            width: 120px;
+            text-align: center;
+        }
+
+        #nhanVien > div#dataTableHeader > div:nth-child(2), #nhanVien > div#dataTable > table > tbody > tr > td:nth-child(2) {
+            width: 310px;
+            text-align: left;
+            padding: 0 0 0 5px;
+        }
+
+        #nhanVien > div#dataTableHeader > div:nth-child(3), #nhanVien > div#dataTable > table > tbody > tr > td:nth-child(3) {
+            width: 140px;
+            text-align: center;
+        }
+
+        #nhanVien > div#dataTableHeader > div:nth-child(4), #nhanVien > div#dataTable > table > tbody > tr > td:nth-child(4) {
+            width: 120px;
+            text-align: center;
+        }
+
+        #nhanVien > div#dataTableHeader > div:nth-child(5), #nhanVien > div#dataTable > table > tbody > tr > td:nth-child(5) {
+            width: 130px;
+            text-align: center;
+            padding: 0 10px 0 0;
+        }
+
+        #nhanVien > div#dataTable {
+            overflow-y: scroll;
+            max-height: 650px;
+        }
+
+        #nhanVien > div#dataTable > table {
+            width: 100%;
+            border-spacing: unset;
+        }
+
+        #nhanVien > div#dataTable > table > tbody > tr {
+
+        }
+
+        #nhanVien > div#dataTable > table > tbody > tr > td {
+            color: var(--color-text);
+            padding: 15px 0;
+            font-size: 14px;
+            font-weight: 300;
+            border-top: 1px solid #dadce0;
+        }
+
+        #nhanVien > div#dataTable > table > tbody > tr:first-child > td {
+            border-top: unset;
+        }
+
+        #nhanVien > div#dataTable > table > tbody > tr > td:nth-child(1):before {
+            content: "#";
+        }
+
+        #titleNV {
+            padding: 24px 24px 16px;
+            background-image: url("https://www.gstatic.com/identity/boq/accountsettingsmobile/contacts_card_scene_316x112_30b26c263ec7d6c2839b403059092259.png");
+            background-repeat: no-repeat;
+            background-position: 500px 50px;
+        }
+
+        #titleNV > h1 {
+            font-size: 22px;
+            font-weight: 400;
+            letter-spacing: 0;
+            color: var(--color-text);
+        }
+
+        #titleNV > h2 {
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0;
+            color: var(--color-text-2);
+            max-width: 500px;
+        }
+
+        #titleNV > div:nth-child(3) {
+            margin: 26px 0 0 0;
+        }
+
+        #titleNV > div:nth-child(3) > label {
+            display: block;
+            width: 110px;
+        }
+
+        #titleNV > div:nth-child(3) > label > span {
+            display: block;
+            margin: 0 0 8px 0;
+            text-align: left;
+            color: var(--color-text-2);
+        }
+
+        #titleNV > div:nth-child(3) > label > input[type=text] {
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: unset;
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+            color: var(--color-text-hr);
+        }
+    </style>
+    <style>
+        #phongBan {
+            margin: 40px 0 0 0;
+        }
+
+        #phongBan > div#dataTable2Header {
+            display: inline-flex;
+            width: 100%;
+            padding: 15px 0 15px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #phongBan > div#dataTable2Header > div {
+            font-size: 12px;
+            color: var(--color-text-hr);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: .07272727em;
+            cursor: default;
+        }
+
+        #phongBan > div#dataTable2Header > div:nth-child(1), #phongBan > div#dataTable2 > table > tbody > tr > td:nth-child(1) {
+            width: 120px;
+            text-align: center;
+        }
+
+        #phongBan > div#dataTable2Header > div:nth-child(2), #phongBan > div#dataTable2 > table > tbody > tr > td:nth-child(2) {
+            width: 310px;
+            text-align: left;
+            padding: 0 0 0 5px;
+        }
+
+        #phongBan > div#dataTable2Header > div:nth-child(3), #phongBan > div#dataTable2 > table > tbody > tr > td:nth-child(3) {
+            width: 140px;
+            text-align: center;
+        }
+
+        #phongBan > div#dataTable2Header > div:nth-child(4), #phongBan > div#dataTable2 > table > tbody > tr > td:nth-child(4) {
+            width: 120px;
+            text-align: center;
+        }
+
+        #phongBan > div#dataTable2Header > div:nth-child(5), #phongBan > div#dataTable2 > table > tbody > tr > td:nth-child(5) {
+            width: 130px;
+            text-align: center;
+            padding: 0 10px 0 0;
+        }
+
+        #phongBan > div#dataTable2 {
+            overflow-y: scroll;
+            max-height: 650px;
+        }
+
+        #phongBan > div#dataTable2 > table {
+            width: 100%;
+            border-spacing: unset;
+        }
+
+        #phongBan > div#dataTable2 > table > tbody > tr {
+
+        }
+
+        #phongBan > div#dataTable2 > table > tbody > tr > td {
+            color: var(--color-text);
+            padding: 15px 0;
+            font-size: 14px;
+            font-weight: 300;
+            border-top: 1px solid #dadce0;
+        }
+
+        #phongBan > div#dataTable2 > table > tbody > tr:first-child > td {
+            border-top: unset;
+        }
+
+        #phongBan > div#dataTable2 > table > tbody > tr > td:nth-child(1):before {
+            content: "#";
+        }
+
+        #titlePB {
+            padding: 24px 24px 16px;
+            background-image: url("https://www.gstatic.com/identity/boq/accountsettingsmobile/storage_scene_316x112_bda0f3955cae9ffd1501cf9c1103368c.png");
+            background-repeat: no-repeat;
+            background-position: 500px 50px;
+        }
+
+        #titlePB > h1 {
+            font-size: 22px;
+            font-weight: 400;
+            letter-spacing: 0;
+            color: var(--color-text);
+        }
+
+        #titlePB > h2 {
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0;
+            color: var(--color-text-2);
+            max-width: 500px;
+        }
+
+        #titlePB > div:nth-child(3) {
+            margin: 26px 0 0 0;
+        }
+
+        #titlePB > div:nth-child(3) > label {
+            display: block;
+            width: 120px;
+        }
+
+        #titlePB > div:nth-child(3) > label > span {
+            display: block;
+            margin: 0 0 8px 0;
+            text-align: left;
+            color: var(--color-text-2);
+        }
+
+        #titlePB > div:nth-child(3) > label > input[type=text] {
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: unset;
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+            color: var(--color-text-hr);
+        }
+    </style>
+    <style>
+        #titleNV > div:nth-child(3) > div, #titlePB > div:nth-child(3) > div {
+            position: relative;
+            z-index: -1;
+        }
+
+        #titleNV > div:nth-child(3) > div > img, #titlePB > div:nth-child(3) > div > img {
+            position: absolute;
+        }
+
+
+        #titleNV > div:nth-child(3) > div > img:nth-child(1) {
+            width: 500px;
+            top: -270px;
+            left: 700px;
+        }
+
+        #titleNV > div:nth-child(3) > div > img:nth-child(2) {
+            width: 160px;
+            top: -280px;
+            left: -80px;
+            opacity: 0.3;
+        }
+
+        #titleNV > div:nth-child(3) > div > img:nth-child(3) {
+            width: 70px;
+            top: -190px;
+            left: 540px;
+            opacity: 0.8;
+        }
+
+        #titleNV > div:nth-child(3) > div > img:nth-child(4) {
+            width: 100px;
+            top: 210px;
+            left: 840px;
+            opacity: 0.3;
+        }
+
+        #titleNV > div:nth-child(3) > div > img:nth-child(5) {
+            width: 130px;
+            top: 0;
+            left: -460px;
+            opacity: 0.2;
+        }
+
+        #titleNV > div:nth-child(3) > div > img:nth-child(6) {
+            width: 40px;
+            top: 140px;
+            left: -200px;
+            opacity: 0.8;
+        }
+
+        #titleNV > div:nth-child(3) > div > img:nth-child(7) {
+            width: 100px;
+            top: -40px;
+            left: -100px;
+            opacity: 1;
+        }
+
+        #titleNV > div:nth-child(3) > div > img:nth-child(8) {
+            width: 140px;
+            top: 140px;
+            left: 770px;
+            opacity: 0.6;
+        }
+
+
+        #titlePB > div:nth-child(3) > div > img:nth-child(1) {
+            width: 450px;
+            top: -260px;
+            left: -370px;
+        }
+
+        #titlePB > div:nth-child(3) > div > img:nth-child(2) {
+            width: 50px;
+            top: -210px;
+            left: 260px;
+            opacity: 0.7;
+        }
+
+        #titlePB > div:nth-child(3) > div > img:nth-child(3) {
+            width: 60px;
+            top: -190px;
+            left: 790px;
+            opacity: 0.8;
+        }
+
+        #titlePB > div:nth-child(3) > div > img:nth-child(4) {
+            width: 100px;
+            top: 20px;
+            left: 840px;
+            opacity: 0.5;
+        }
+
+        #titlePB > div:nth-child(3) > div > img:nth-child(5) {
+            width: 150px;
+            top: 130px;
+            left: -400px;
+            opacity: 0.3;
+        }
+
+        #titlePB > div:nth-child(3) > div > img:nth-child(6) {
+            width: 200px;
+            top: -300px;
+            left: 980px;
+            opacity: 0.2;
+        }
+
+        #titlePB > div:nth-child(3) > div > img:nth-child(7) {
+            width: 120px;
+            top: -330px;
+            left: -300px;
+            opacity: 0.4;
+        }
+
+        #titlePB > div:nth-child(3) > div > img:nth-child(8) {
+            width: 160px;
+            top: 60px;
+            left: 750px;
+            opacity: 0.1;
+        }
+    </style>
 </head>
 <body>
 
@@ -25,7 +400,8 @@
         <div><a href="quanLyNhanVien.html"><i class="far fa-users"></i>Quản lý nhân viên</a></div>
         <div><a href="thanhTichVaKyLuat.html"><i class="fal fa-clipboard-user"></i>Thành tích / Kỷ
             luật</a></div>
-        <div class="accept"><a href="tongHopThanhTichVaKyLuat.html"><i class="far fa-trophy-alt"></i>Tổng hợp thành tích và kỷ luật</a></div>
+        <div class="accept"><a href="tongHopThanhTichVaKyLuat.html"><i class="far fa-trophy-alt"></i>Tổng hợp thành tích
+            và kỷ luật</a></div>
     </div>
 </div>
 
@@ -37,13 +413,257 @@
     </div>
     <div id="thttvkl">
         <div id="nhanVien">
-            cccc
+            <div id="titleNV">
+                <h1>Tổng quát nhân viên</h1>
+                <h2>Đây là danh sách tổng hợp thành tích và kỷ luật của nhân viên</h2>
+                <div>
+                    <label><input type="text" placeholder="Mã nhân viên" onkeyup="loadFilter(this)"></label>
+                    <div>
+                        <img src="../Library/Image/88357387_132378488191201_5372023718061015040_n.png" alt="">
+                        <img src="../Library/Image/3AC1B0.png" alt="">
+                        <img src="../Library/Image/3AC1B0.png" alt="">
+                        <img src="../Library/Image/3AC1B0.png" alt="">
+                        <img src="../Library/Image/3AC1B0.png" alt="">
+                        <img src="../Library/Image/3AC1B0.png" alt="">
+                        <img src="../Library/Image/3AC1B0-2.png" alt="">
+                        <img src="../Library/Image/3AC1B0-2.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="dataTableHeader">
+                <div>Mã nhân viên</div>
+                <div style="margin: 0 3px 0 0;">Tên nhân viên</div>
+                <div>Tổng thành tích</div>
+                <div>Tổng kỷ luật</div>
+                <div>Điểm thưởng</div>
+            </div>
+            <div id="dataTable" class="scrollbarGG">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>Trần Quang Đức</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div id="phongBan">
-            ccc
+            <div id="titlePB">
+                <h1>Tổng quát phòng ban</h1>
+                <h2>Đây là danh sách tổng hợp thành tích và kỷ luật của toàn bộ nhân viên trong phòng ban</h2>
+                <div>
+                    <label><input type="text" placeholder="Mã phòng ban" onkeyup="loadFilter2(this)"></label>
+                    <div>
+                        <img src="../Library/Image/88081772_529558737676014_4133787562907009024_n.png" alt="">
+                        <img src="../Library/Image/E83F50.png" alt="">
+                        <img src="../Library/Image/E83F50.png" alt="">
+                        <img src="../Library/Image/E83F50.png" alt="">
+                        <img src="../Library/Image/E83F50.png" alt="">
+                        <img src="../Library/Image/E83F50.png" alt="">
+                        <img src="../Library/Image/E83F50-2.png" alt="">
+                        <img src="../Library/Image/E83F50-2.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="dataTable2Header">
+                <div>Mã phòng ban</div>
+                <div style="margin: 0 3px 0 0;">Tên phòng ban</div>
+                <div>Tổng thành tích</div>
+                <div>Tổng kỷ luật</div>
+                <div>Điểm thưởng</div>
+            </div>
+            <div id="dataTable2" class="scrollbarGG">
+                <table>
+                    <tbody>
+                    <tr>
+                        <td>TKL</td>
+                        <td>Th Kh TL</td>
+                        <td>9</td>
+                        <td>3</td>
+                        <td>6</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </main>
+
+<script>
+    function loadFilter(val) {
+        var input, filter, table, tr, td, i;
+        input = val;
+        filter = input.value.toUpperCase();
+        table = document.getElementById("dataTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+    function loadFilter2(val) {
+        var input, filter, table, tr, td, i;
+        input = val;
+        filter = input.value.toUpperCase();
+        table = document.getElementById("dataTable2");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
 
 </body>
 </html>
