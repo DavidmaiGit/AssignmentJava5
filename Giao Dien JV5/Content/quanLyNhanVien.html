@@ -81,7 +81,7 @@
     <style>
         #tablet {
             max-width: 850px;
-            margin: 26px auto 0;
+            margin: 26px auto;
             border: 1px solid #dadce0;
             border-radius: 8px;
             /*padding: 26px 26px 0 26px;*/
@@ -105,9 +105,11 @@
         }
 
         #theader > div.tr > div.th:nth-child(3), #theader > div.tr > div.th:nth-child(5), #theader > div.tr > div.th:nth-child(6),
-        #theader > div.tr > div.th:nth-child(8), #theader > div.tr > div.th:nth-child(9), #theader > div.tr > div.th:nth-child(10),
+        #theader > div.tr > div.th:nth-child(9), #theader > div.tr > div.th:nth-child(10), #theader > div.tr > div.th:nth-child(11),
+        #theader > div.tr > div.th:nth-child(4), #theader > div.tr > div.th:nth-child(7),
         #tbody > div.tr > div.td:nth-child(3), #tbody > div.tr > div.td:nth-child(5), #tbody > div.tr > div.td:nth-child(6),
-        #tbody > div.tr > div.td:nth-child(8), #tbody > div.tr > div.td:nth-child(9), #tbody > div.tr > div.td:nth-child(10) {
+        #tbody > div.tr > div.td:nth-child(9), #tbody > div.tr > div.td:nth-child(10), #tbody > div.tr > div.td:nth-child(11),
+        #tbody > div.tr > div.td:nth-child(4), #tbody > div.tr > div.td:nth-child(7) {
             display: none;
         }
 
@@ -130,7 +132,7 @@
             padding: 0 25px;
         }
 
-        #theader > div.tr > div.th:nth-child(4), #tbody > div.tr > div.td:nth-child(4) {
+        #theader > div.tr > div.th:nth-child(5), #tbody > div.tr > div.td:nth-child(5) {
             max-width: 60px;
             max-height: 60px;
             width: 60px;
@@ -143,7 +145,7 @@
             overflow: hidden;
         }
 
-        #theader > div.tr > div.th:nth-child(4) {
+        #theader > div.tr > div.th:nth-child(5) {
             margin: 0;
             max-width: 100px;
             width: 100px;
@@ -151,7 +153,7 @@
             overflow: unset;
         }
 
-        #theader > div.tr > div.th:nth-child(7), #tbody > div.tr > div.td:nth-child(7) {
+        #theader > div.tr > div.th:nth-child(8), #tbody > div.tr > div.td:nth-child(8) {
             width: 16%;
             display: flex;
             align-items: center;
@@ -173,7 +175,7 @@
             text-transform: capitalize;
         }
 
-        #tbody > div.tr > div.td:nth-child(4) > img {
+        #tbody > div.tr > div.td:nth-child(5) > img {
             width: 60px;
             height: 60px;
         }
@@ -338,7 +340,7 @@
             width: 390px;
         }
 
-        .editNV-table > div.tr:nth-child(4) > div.td > label {
+        .editNV-table > div.tr:nth-child(5) > div.td > label {
             display: inline-flex;
             cursor: pointer;
         }
@@ -354,15 +356,15 @@
             margin-left: 26px;
         }
 
-        .editNV-table > div.tr:nth-child(3) > div.td > label {
+        .editNV-table > div.tr:nth-child(4) > div.td > label {
             margin: 0 26px 0 0;
         }
 
-        .editNV-table > div.tr:nth-child(3) > div.td > label > input[type=radio] {
+        .editNV-table > div.tr:nth-child(4) > div.td > label > input[type=radio] {
             margin-right: 5px;
         }
 
-        .editNV-table > div.tr:nth-child(10) > div.td > label > textarea {
+        .editNV-table > div.tr:nth-child(11) > div.td > label > textarea {
             outline: none;
             border: 1px solid #dadce0;
             border-radius: 8px;
@@ -470,6 +472,19 @@
         }
     </style>
 
+    <style>
+        #editNV > div > div.mobal-container > div > div:nth-child(3) > div.td > label {
+            width: 390px;
+        }
+        #editNV > div > div.mobal-container > div > div:nth-child(3) > div.td > label > select {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0);
+            border: none;
+            outline: none;
+        }
+
+    </style>
+
 </head>
 <body>
 
@@ -523,6 +538,7 @@
                 <div class="tr">
                     <div class="th">Mã nhân viên</div>
                     <div class="th">Họ và tên</div>
+                    <div class="th">Phòng ban</div>
                     <div class="th">Giới tính</div>
                     <div class="th">Hình ảnh</div>
                     <div class="th">Ngày sinh</div>
@@ -538,6 +554,7 @@
                 <div class="tr" onclick="editNVOpen(this)">
                     <div class="td">0001</div>
                     <div class="td">Trần Quang Đức</div>
+                    <div class="td">1</div>
                     <div class="td">Nam</div>
                     <div class="td"><img
                             src="https://image.shutterstock.com/image-vector/example-stamp-260nw-426673501.jpg" alt="">
@@ -553,6 +570,7 @@
                 <div class="tr" onclick="editNVOpen(this)">
                     <div class="td">0002</div>
                     <div class="td">Mai Anh Đức</div>
+                    <div class="td">2c4</div>
                     <div class="td">Nam</div>
                     <div class="td"><img
                             src="https://image.shutterstock.com/image-vector/example-stamp-260nw-426673501.jpg" alt="">
@@ -568,6 +586,7 @@
                 <div class="tr" onclick="editNVOpen(this)">
                     <div class="td">0003</div>
                     <div class="td">Alex</div>
+                    <div class="td">33a</div>
                     <div class="td">Nữ</div>
                     <div class="td"><img
                             src="https://image.shutterstock.com/image-vector/example-stamp-260nw-426673501.jpg" alt="">
@@ -599,6 +618,18 @@
                 <div class="tr">
                     <div class="th">Họ và tên</div>
                     <div class="td"><label><input type="text" form="formNV" required></label></div>
+                </div>
+                <div class="tr">
+                    <div class="th">Phòng ban</div>
+                    <div class="td">
+                        <label for="editNVSelect">
+                            <select id="editNVSelect" form="formNV" required>
+                                <option value="1">AAA</option>
+                                <option value="2c4">BBB</option>
+                                <option value="33a">CCC</option>
+                            </select>
+                        </label>
+                    </div>
                 </div>
                 <div class="tr">
                     <div class="th">Giới tính</div>
@@ -672,20 +703,21 @@
 
 <script>
     var tagEditNV = document.getElementById("editNV");
-    var tittleNV = tagEditNV.children[0].children[1].children[0];
-    var mnv = tagEditNV.children[0].children[1].children[1].children[0].children[1].children[0].children[0];
-    var hoVaTen = tagEditNV.children[0].children[1].children[1].children[1].children[1].children[0].children[0];
-    var gioiTinhNam = tagEditNV.children[0].children[1].children[1].children[2].children[1].children[0].children[0];
-    var gioiTinhNu = tagEditNV.children[0].children[1].children[1].children[2].children[1].children[1].children[0];
-    var gioiTinhKhac = tagEditNV.children[0].children[1].children[1].children[2].children[1].children[2].children[0];
-    var image = tagEditNV.children[0].children[1].children[1].children[3].children[1].children[0].children[0];
-    var image2 = tagEditNV.children[0].children[1].children[1].children[3].children[1].children[0].children[1];
-    var date = tagEditNV.children[0].children[1].children[1].children[4].children[1].children[0].children[0];
-    var luong = tagEditNV.children[0].children[1].children[1].children[5].children[1].children[0].children[0];
-    var capDo = tagEditNV.children[0].children[1].children[1].children[6].children[1].children[0].children[0];
-    var email = tagEditNV.children[0].children[1].children[1].children[7].children[1].children[0].children[0];
-    var dienThoai = tagEditNV.children[0].children[1].children[1].children[8].children[1].children[0].children[0];
-    var ghiChu = tagEditNV.children[0].children[1].children[1].children[9].children[1].children[0].children[0];
+    var tittleNV = document.querySelector("#editNV > div > div.mobal-container > h1");
+    var mnv = document.querySelector("#editNV > div > div.mobal-container > div > div:nth-child(1) > div.td > label > input[type=text]");
+    var hoVaTen = document.querySelector("#editNV > div > div.mobal-container > div > div:nth-child(2) > div.td > label > input[type=text]");
+    var phongBan = document.querySelector("#editNVSelect");
+    var gioiTinhNam = document.querySelector("#rdoNam");
+    var gioiTinhNu = document.querySelector("#rdoNu");
+    var gioiTinhKhac = document.querySelector("#rdoKhac");
+    var image = document.querySelector("#imageEdit > img:nth-child(1)");
+    var image2 = document.querySelector("#imageEdit > img:nth-child(2)");
+    var date = document.querySelector("#editNV > div > div.mobal-container > div > div:nth-child(6) > div.td > label > input[type=date]");
+    var luong = document.querySelector("#editNV > div > div.mobal-container > div > div:nth-child(7) > div.td > label > input[type=number]");
+    var capDo = document.querySelector("#editNV > div > div.mobal-container > div > div:nth-child(8) > div.td > label > input[type=number]");
+    var email = document.querySelector("#editNV > div > div.mobal-container > div > div:nth-child(9) > div.td > label > input[type=email]");
+    var dienThoai = document.querySelector("#editNV > div > div.mobal-container > div > div:nth-child(10) > div.td > label > input[type=text]");
+    var ghiChu = document.querySelector("#editNV > div > div.mobal-container > div > div:nth-child(11) > div.td > label > textarea");
     var tggSS = false;
     var tctc = document.getElementById("tctc");
     var tagCTLbody = document.getElementById("tagCTLbody");
@@ -694,22 +726,29 @@
         tittleNV.innerHTML = "Thông tin của <label>" + val.children[1].innerHTML + "</label>";
         mnv.value = val.children[0].innerHTML;
         hoVaTen.value = val.children[1].innerHTML;
-        if (val.children[2].innerText === "Nam") {
+        for (var i = 0; i < phongBan.length; i++) {
+            if (phongBan.options.item(i).value === val.children[2].innerText) {
+                phongBan.selectedIndex = i;
+                break;
+            }
+        }
+        if (val.children[3].innerText === "Nam") {
             gioiTinhNam.checked = true;
-        } else if (val.children[2].innerText === "Nữ") {
+        } else if (val.children[3].innerText === "Nữ") {
             gioiTinhNu.checked = true;
         } else {
             gioiTinhKhac.checked = true;
         }
-        var getImage = val.children[3].children[0].src;
+        var getImage = val.children[4].children[0].src;
         image.src = getImage;
         image2.src = getImage;
-        date.value = val.children[4].innerHTML;
-        luong.value = val.children[5].innerHTML;
-        capDo.value = val.children[6].innerHTML;
-        email.value = val.children[7].innerHTML;
-        dienThoai.value = val.children[8].innerHTML;
-        ghiChu.value = val.children[9].innerHTML;
+        document.querySelector("#Image").value = getImage;
+        date.value = val.children[5].innerHTML;
+        luong.value = val.children[6].innerHTML;
+        capDo.value = val.children[7].innerHTML;
+        email.value = val.children[8].innerHTML;
+        dienThoai.value = val.children[9].innerHTML;
+        ghiChu.value = val.children[10].innerHTML;
 
         document.getElementById("btnEditNV").children[0].style.display = "none";
         document.getElementById("btnEditNV").children[1].style.display = "block";
@@ -754,11 +793,13 @@
             tittleNV.innerHTML = "Thêm mới nhân viên";
             mnv.value = null;
             hoVaTen.value = null;
+            phongBan.selectedIndex = 0;
             gioiTinhNam.checked = true;
             gioiTinhNu.checked = false;
             gioiTinhKhac.checked = false;
-            image.src = null;
-            image2.src = null;
+            image.src = "";
+            image2.src = "";
+            document.querySelector("#Image").value = null;
             date.value = null;
             luong.value = null;
             capDo.value = null;
@@ -844,7 +885,7 @@
         tr = table.getElementsByClassName("tr");
         g = table.getElementsByClassName("g");
         for (i = 0; i < tr.length; i++) {
-            td = tr[i].getElementsByClassName("td")[6];
+            td = tr[i].getElementsByClassName("td")[7];
             if (td) {
                 txtValue = td.textContent || td.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
