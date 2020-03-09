@@ -13,7 +13,7 @@
             max-width: 840px;
             margin: 26px auto;
             border-radius: 16px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
         }
 
         .btnToggle {
@@ -132,7 +132,6 @@
             position: absolute;
             top: 20px;
             left: 26px;
-            display: none;
         }
 
         #tagTgg1 > .tagTGGContent > label:nth-child(1) > span, #tagTgg1 > .tagTGGContent > label:nth-child(2) > span,
@@ -327,6 +326,33 @@
             padding: 5px;
         }
     </style>
+    <style>
+        #tagTgg1 > div.tagTGGContent > label:nth-child(1) > input[type=text] {
+            border: none;
+            border-bottom: 1px solid var(--color-text-hr);
+            outline: none;
+            padding: 4px;
+        }
+        #tagTgg2 > div.tagTGGContent > label:nth-child(1) {
+            top: 25px;
+            left: 450px;
+        }
+        #tagTgg2 > div.tagTGGContent > label:nth-child(1) > span {
+            text-align: right;
+            color: var(--color-text-2);
+            font-size: 13px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: .07272727em;
+            display: block;
+        }
+        #tagTgg2 > div.tagTGGContent > label:nth-child(1) > input[type=text] {
+            border: none;
+            border-bottom: 1px solid var(--color-text-hr);
+            outline: none;
+            padding: 4px;
+        }
+    </style>
 
 </head>
 <body>
@@ -360,8 +386,8 @@
             <div id="tagTgg1">
                 <div class="tagTGGContent">
                     <label>
-                        <span>Phòng ban</span>
-                        <select></select>
+                        <span>Tìm kiếm nhanh</span>
+                        <input type="text" onkeyup="fillter(this)">
                     </label>
                     <label>
                         <span>Mã nhân viên</span>
@@ -383,8 +409,8 @@
             <div id="tagTgg2">
                 <div class="tagTGGContent">
                     <label>
-                        <span>Phòng ban</span>
-                        <select></select>
+                        <span>Tìm kiếm nhanh</span>
+                        <input type="text" onkeyup="fillter2(this)">
                     </label>
                     <label>
                         <span>Mã nhân viên</span>
@@ -545,7 +571,7 @@
         for (var i = 0; i < tr.length; i++) {
             var option = document.createElement("option");
             option.value = tr[i].children[0].innerHTML;
-            option.text = tr[i].children[0].innerHTML;
+            option.text = tr[i].children[0].innerHTML + " - " + tr[i].children[1].innerHTML;
             cbb.add(option);
         }
         tagTGG1.children[0].children[2].children[0].src = table1.children[1].children[0].children[2].innerHTML;
@@ -558,11 +584,96 @@
         for (var i = 0; i < tr.length; i++) {
             var option = document.createElement("option");
             option.value = tr[i].children[0].innerHTML;
-            option.text = tr[i].children[0].innerHTML;
+            option.text = tr[i].children[0].innerHTML + " - " + tr[i].children[1].innerHTML;
             cbb.add(option);
         }
         tagTGG2.children[0].children[2].children[0].src = table2.children[1].children[0].children[2].innerHTML;
         tagTGG2.children[0].children[3].innerHTML = table2.children[1].children[0].children[1].innerHTML;
+    }
+
+    function fillter(val) {
+        var input, fillter, select, option, i;
+        input = val;
+        fillter = input.value.toUpperCase();
+        select = document.querySelector("#tagTgg1 > div.tagTGGContent > label:nth-child(2) > select");
+        option = select.options;
+        for (i = 0; i < select.length; i++) {
+            if (option) {
+                txtValue = option[i].textContent || option[i].innerText
+                if (txtValue.toUpperCase().indexOf(fillter) > -1) {
+                    option[i].style.display = "";
+                } else {
+                    option[i].style.display = "none";
+                }
+            }
+        }
+        for (i = 0; i < select.length; i++) {
+            var valv = (select.options[i].style.display === 'none');
+            if (!valv) {
+                select.selectedIndex = i;
+                load(select.options[i].value);
+                break;
+            }
+        }
+    }
+
+    function fillter2(val) {
+        var input, fillter, select, option, i;
+        input = val;
+        fillter = input.value.toUpperCase();
+        select = document.querySelector("#tagTgg2 > div.tagTGGContent > label:nth-child(2) > select");
+        option = select.options;
+        for (i = 0; i < select.length; i++) {
+            if (option) {
+                txtValue = option[i].textContent || option[i].innerText
+                if (txtValue.toUpperCase().indexOf(fillter) > -1) {
+                    option[i].style.display = "";
+                } else {
+                    option[i].style.display = "none";
+                }
+            }
+        }
+        for (i = 0; i < select.length; i++) {
+            if (!(select.options[i].style.display === 'none')) {
+                select.selectedIndex = i;
+                load2(select.options[i].value);
+                break;
+            }
+        }
+    }
+
+    function load(val) {
+        var setImage = document.querySelector("#tagTgg1 > div.tagTGGContent > label:nth-child(3) > img");
+        var setName = document.querySelector("#tagTgg1 > div.tagTGGContent > label:nth-child(4)");
+        var setLyDo = document.querySelector("#tagTgg1 > div.tagTGGContent > label:nth-child(5) > textarea");
+        var setDate = document.querySelector("#tagTgg1 > div.tagTGGContent > label:nth-child(6) > input[type=date]");
+        var tr = table1.children[1].children;
+        for (var i = 0; i < tr.length; i++) {
+            if (val === tr[i].children[0].innerHTML) {
+                setName.innerHTML = tr[i].children[1].innerHTML;
+                setImage.src = tr[i].children[2].innerHTML;
+                setLyDo.value = null;
+                setDate.value = null;
+                break;
+            }
+        }
+    }
+
+    function load2(val) {
+        var setImage = document.querySelector("#tagTgg2 > div.tagTGGContent > label:nth-child(3) > img");
+        var setName = document.querySelector("#tagTgg2 > div.tagTGGContent > label:nth-child(4)");
+        var setLyDo = document.querySelector("#tagTgg2 > div.tagTGGContent > label:nth-child(5) > textarea");
+        var setDate = document.querySelector("#tagTgg2 > div.tagTGGContent > label:nth-child(6) > input[type=date]");
+        var tr = table1.children[1].children;
+        for (var i = 0; i < tr.length; i++) {
+            if (val === tr[i].children[0].innerHTML) {
+                setName.innerHTML = tr[i].children[1].innerHTML;
+                setImage.src = tr[i].children[2].innerHTML;
+                setLyDo.value = null;
+                setDate.value = null;
+                break;
+            }
+        }
     }
 
     loadCBB1();

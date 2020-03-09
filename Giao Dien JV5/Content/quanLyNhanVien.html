@@ -613,7 +613,7 @@
             <div class="editNV-table">
                 <div class="tr">
                     <div class="th">Mã nhân viên</div>
-                    <div class="td"><label><input type="text" form="formNV" required></label></div>
+                    <div class="td"><label><input type="text" form="formNV" required readonly="readonly" placeholder="Trường này không cần điền"></label></div>
                 </div>
                 <div class="tr">
                     <div class="th">Họ và tên</div>
@@ -725,6 +725,8 @@
     function editNVOpen(val) {
         tittleNV.innerHTML = "Thông tin của <label>" + val.children[1].innerHTML + "</label>";
         mnv.value = val.children[0].innerHTML;
+        document.querySelector("#editNV > div > div.mobal-container > div > div:nth-child(1) > div.td > label > input[type=text]").setAttribute("readonly","readonly");
+        document.querySelector("#editNV > div > div.mobal-container > div > div:nth-child(1) > div.td > label > input[type=text]").setAttribute("required", "required");
         hoVaTen.value = val.children[1].innerHTML;
         for (var i = 0; i < phongBan.length; i++) {
             if (phongBan.options.item(i).value === val.children[2].innerText) {
@@ -792,6 +794,8 @@
         if (acc === 1) {
             tittleNV.innerHTML = "Thêm mới nhân viên";
             mnv.value = null;
+            document.querySelector("#editNV > div > div.mobal-container > div > div:nth-child(1) > div.td > label > input[type=text]").removeAttribute("readonly");
+            document.querySelector("#editNV > div > div.mobal-container > div > div:nth-child(1) > div.td > label > input[type=text]").removeAttribute("required");
             hoVaTen.value = null;
             phongBan.selectedIndex = 0;
             gioiTinhNam.checked = true;
