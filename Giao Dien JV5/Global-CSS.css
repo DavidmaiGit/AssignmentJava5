@@ -83,6 +83,7 @@ html {
     overflow: auto;
     top: 0;
     left: 0;
+    z-index: 25;
 }
 
 .tagMenu > .tagMenu-content {
