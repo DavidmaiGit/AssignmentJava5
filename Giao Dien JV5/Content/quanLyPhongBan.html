@@ -360,6 +360,175 @@
             color: white;
         }
     </style>
+    <style>
+        #section > section > article.addNewDepartment {
+            border: 5px dashed rgba(204, 204, 204, 0.5);
+            cursor: pointer;
+        }
+
+        #section > section > article.addNewDepartment.accept {
+            border: 5px dashed rgba(66, 133, 244, 1);
+        }
+
+        #section > section > article.addNewDepartment > div.andContent {
+            background-color: white;
+            width: auto;
+            height: 100%;
+            margin: 0 !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #section > section > article.addNewDepartment.accept > div.andContent {
+            background-color: #E8F0FE;
+        }
+
+        #section > section > article.addNewDepartment > div.andContent > i {
+            font-size: 50px;
+            font-weight: 100;
+            color: var(--color-text-2);
+            background-color: #eaecf075;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        #section > section > article.addNewDepartment.accept > div.andContent > i {
+            background-color: #4285f4;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+        }
+
+        #section > section > article.addNewDepartment > div.andContent > div {
+            width: auto;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 100;
+            color: var(--color-text-2);
+            margin: 15px 0 0 0;
+            padding: 5px 7px;
+            border-radius: 4px;
+        }
+
+        #section > section > article.addNewDepartment.accept > div.andContent > div {
+            background-color: #4285f4;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+        }
+
+        #section > section > article.addNewDepartment, #section > section > article.addNewDepartment > div.andContent,
+        #section > section > article.addNewDepartment > div.andContent > i, #section > section > article.addNewDepartment > div.andContent > div {
+            transition: 0.2s;
+        }
+        #btnFormAdd {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #add > div.mobal-content > div.mobal-container > span {
+            border-bottom: 1px solid #e8eaed;
+            display: flex;
+            padding: 16px 0;
+            align-items: center;
+        }
+        #add > div.mobal-content > div.mobal-container > span:last-child {
+            border-bottom: none;
+        }
+        #add > div.mobal-content > div.mobal-container > span > label:first-child {
+            display: inline-flex;
+            width: 200px;
+            color: var(--color-text-2);
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: .07272727em;
+            word-break: break-word;
+            word-wrap: break-word;
+        }
+        #add > div.mobal-content > div.mobal-container > span > label:nth-child(2) {
+            display: inline-block;
+            max-width: 344px;
+            width: 100%;
+        }
+        #add > div.mobal-content > div.mobal-container > span > label:nth-child(2) > input[type=text] {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #cbcdd0;
+            outline: none;
+            padding: 0 5px;
+            color: var(--color-text);
+        }
+        #add > div.mobal-content > div.mobal-container > span > label:nth-child(2) > label {
+            max-width: 96px;
+            max-height: 96px;
+            width: 96px;
+            height: 96px;
+            display: inline-block;
+            cursor: pointer;
+            border: 0.1px solid #ccc;
+        }
+        #add > div.mobal-content > div.mobal-container > span > label:nth-child(2) > label > img {
+            width: 96px;
+            height: 96px;
+        }
+        #add > div.mobal-content > div.mobal-container > span > label:nth-child(2) > input[type=file] {
+            display: none;
+        }
+
+        #addPBtop {
+            margin: 20px 26px 0 0;
+            position: fixed;
+            top: 0;
+            right: 0;
+            display: inline;
+        }
+        #addPBtop > i {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            color: var(--color-text-2);
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color .25s, box-shadow .25s;
+            position: absolute;
+            right: 0;
+            z-index: 5;
+        }
+        #addPBtop > i:hover {
+            background-color: #F0F0F0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+            border: 1px solid #DADCE0;
+        }
+        #addPBtop > div {
+            width: 0;
+            height: 50px;
+            background-color: #E8F0FE;
+            border-radius: 50px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            overflow: hidden;
+            padding: 0 60px 0 15px;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        #addPBtop > div > label {
+            color: var(--color-text-hr);
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            display: block;
+            width: 240px;
+        }
+</style>
 </head>
 <body>
 
@@ -369,7 +538,15 @@
         <div class="accept"><a href="quanLyPhongBan.html"><i class="far fa-building"></i>Quản lý phòng ban</a></div>
         <div><a href="quanLyNhanVien.html"><i class="far fa-users"></i>Quản lý nhân viên</a></div>
         <div><a href="thanhTichVaKyLuat.html"><i class="fal fa-clipboard-user"></i>Thành tích / Kỷ luật</a></div>
-        <div><a href="tongHopThanhTichVaKyLuat.html"><i class="far fa-trophy-alt"></i>Tổng hợp thành tích và kỷ luật</a></div>
+        <div><a href="tongHopThanhTichVaKyLuat.html"><i class="far fa-trophy-alt"></i>Tổng hợp thành tích và kỷ luật</a>
+        </div>
+    </div>
+</div>
+
+<div id="addPBtop">
+    <i class="far fa-plus"></i>
+    <div>
+        <label>Thêm mới phòng ban</label>
     </div>
 </div>
 
@@ -402,193 +579,12 @@
                     </div>
                 </div>
             </article>
-            <article>
-                <div class="w3-row">
-                    <div class="w3-col">
-                        <h1>#0001</h1>
-                        <h2>Tên phòng ban asdas asd asd ad</h2>
-                        <h3><i class="fas fa-star"></i><label>143 thành tích</label></h3>
-                        <h3><i class="far fa-star"></i><label>66 kỷ luật</label></h3>
-                    </div>
-                    <div class="w3-col">
-                        <img width="96"
-                             src="https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_icon_96x96_cdb6dff2e31ed6745ece4662231bfd48.png"
-                             alt="">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div><a onclick="deletee(this)">Xóa</a></div>
-                        <div><a onclick="editt(this)">Sửa lại</a></div>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <div class="w3-row">
-                    <div class="w3-col">
-                        <h1>#0001</h1>
-                        <h2>Tên phòng ban asdas asd asd ad</h2>
-                        <h3><i class="fas fa-star"></i><label>143 thành tích</label></h3>
-                        <h3><i class="far fa-star"></i><label>66 kỷ luật</label></h3>
-                    </div>
-                    <div class="w3-col">
-                        <img width="96"
-                             src="https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_icon_96x96_cdb6dff2e31ed6745ece4662231bfd48.png"
-                             alt="">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div><a onclick="deletee(this)">Xóa</a></div>
-                        <div><a onclick="editt(this)">Sửa lại</a></div>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <div class="w3-row">
-                    <div class="w3-col">
-                        <h1>#0001</h1>
-                        <h2>Tên phòng ban asdas asd asd ad</h2>
-                        <h3><i class="fas fa-star"></i><label>143 thành tích</label></h3>
-                        <h3><i class="far fa-star"></i><label>66 kỷ luật</label></h3>
-                    </div>
-                    <div class="w3-col">
-                        <img width="96"
-                             src="https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_icon_96x96_cdb6dff2e31ed6745ece4662231bfd48.png"
-                             alt="">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div><a onclick="deletee(this)">Xóa</a></div>
-                        <div><a onclick="editt(this)">Sửa lại</a></div>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <div class="w3-row">
-                    <div class="w3-col">
-                        <h1>#0001</h1>
-                        <h2>Tên phòng ban asdas asd asd ad</h2>
-                        <h3><i class="fas fa-star"></i><label>143 thành tích</label></h3>
-                        <h3><i class="far fa-star"></i><label>66 kỷ luật</label></h3>
-                    </div>
-                    <div class="w3-col">
-                        <img width="96"
-                             src="https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_icon_96x96_cdb6dff2e31ed6745ece4662231bfd48.png"
-                             alt="">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div><a onclick="deletee(this)">Xóa</a></div>
-                        <div><a onclick="editt(this)">Sửa lại</a></div>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <div class="w3-row">
-                    <div class="w3-col">
-                        <h1>#0001</h1>
-                        <h2>Tên phòng ban asdas asd asd ad</h2>
-                        <h3><i class="fas fa-star"></i><label>143 thành tích</label></h3>
-                        <h3><i class="far fa-star"></i><label>66 kỷ luật</label></h3>
-                    </div>
-                    <div class="w3-col">
-                        <img width="96"
-                             src="https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_icon_96x96_cdb6dff2e31ed6745ece4662231bfd48.png"
-                             alt="">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div><a onclick="deletee(this)">Xóa</a></div>
-                        <div><a onclick="editt(this)">Sửa lại</a></div>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <div class="w3-row">
-                    <div class="w3-col">
-                        <h1>#0001</h1>
-                        <h2>Tên phòng ban asdas asd asd ad</h2>
-                        <h3><i class="fas fa-star"></i><label>143 thành tích</label></h3>
-                        <h3><i class="far fa-star"></i><label>66 kỷ luật</label></h3>
-                    </div>
-                    <div class="w3-col">
-                        <img width="96"
-                             src="https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_icon_96x96_cdb6dff2e31ed6745ece4662231bfd48.png"
-                             alt="">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div><a onclick="deletee(this)">Xóa</a></div>
-                        <div><a onclick="editt(this)">Sửa lại</a></div>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <div class="w3-row">
-                    <div class="w3-col">
-                        <h1>#0001</h1>
-                        <h2>Tên phòng ban asdas asd asd ad</h2>
-                        <h3><i class="fas fa-star"></i><label>143 thành tích</label></h3>
-                        <h3><i class="far fa-star"></i><label>66 kỷ luật</label></h3>
-                    </div>
-                    <div class="w3-col">
-                        <img width="96"
-                             src="https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_icon_96x96_cdb6dff2e31ed6745ece4662231bfd48.png"
-                             alt="">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div><a onclick="deletee(this)">Xóa</a></div>
-                        <div><a onclick="editt(this)">Sửa lại</a></div>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <div class="w3-row">
-                    <div class="w3-col">
-                        <h1>#0001</h1>
-                        <h2>Tên phòng ban asdas asd asd ad</h2>
-                        <h3><i class="fas fa-star"></i><label>143 thành tích</label></h3>
-                        <h3><i class="far fa-star"></i><label>66 kỷ luật</label></h3>
-                    </div>
-                    <div class="w3-col">
-                        <img width="96"
-                             src="https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_icon_96x96_cdb6dff2e31ed6745ece4662231bfd48.png"
-                             alt="">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div><a onclick="deletee(this)">Xóa</a></div>
-                        <div><a onclick="editt(this)">Sửa lại</a></div>
-                    </div>
-                </div>
-            </article>
-            <article>
-                <div class="w3-row">
-                    <div class="w3-col">
-                        <h1>#0001</h1>
-                        <h2>Tên phòng ban asdas asd asd ad</h2>
-                        <h3><i class="fas fa-star"></i><label>143 thành tích</label></h3>
-                        <h3><i class="far fa-star"></i><label>66 kỷ luật</label></h3>
-                    </div>
-                    <div class="w3-col">
-                        <img width="96"
-                             src="https://www.gstatic.com/identity/boq/accountsettingsmobile/dataandpersonalization_icon_96x96_cdb6dff2e31ed6745ece4662231bfd48.png"
-                             alt="">
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <div><a onclick="deletee(this)">Xóa</a></div>
-                        <div><a onclick="editt(this)">Sửa lại</a></div>
-                    </div>
+
+            <!--        add new department-->
+            <article class="addNewDepartment" id="btnAND">
+                <div class="andContent">
+                    <i class="fal fa-plus"></i>
+                    <div>Thêm mới phòng ban</div>
                 </div>
             </article>
         </section>
@@ -605,20 +601,21 @@
             <span>
                 <label>Mã phòng ban</label>
                 <label>
-                    #<input type="text" class="dist" required form="formEdit">
+                    #<input type="text" class="dist" required form="formEdit" name="maPB" readonly>
                 </label>
             </span>
             <span>
                 <label>Tên phòng ban</label>
                 <label>
-                    <input type="text" required form="formEdit">
+                    <input type="text" required form="formEdit" name="tenPB">
                 </label>
             </span>
             <span>
                 <label>Ảnh đại diện</label>
                 <label>
                     <label for="fileImage"><img src="" alt="" width="96" height="96"></label>
-                    <input type="file" id="fileImage" onchange="loadImage(this)" required form="formEdit">
+                    <input type="file" id="fileImage" onchange="loadImage(this)">
+                    <input type="text" name="anhPB"  form="formEdit" style="display: none">
                 </label>
             </span>
         </div>
@@ -643,9 +640,46 @@
         </div>
         <div class="mobal-footer">
             <div id="btn-delete">
-                <button type="submit" onclick="document.getElementById('delete').style.display = 'none'">Không
+                <button onclick="document.getElementById('delete').style.display = 'none'">Không
                 </button>
                 <button type="submit" form="formDel">Có</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form id="formAdd"></form>
+<div id="add" class="mobal">
+    <div class="mobal-content">
+        <span class="close"><i class="far fa-times-hexagon"
+                               onclick="hideAdd()"></i></span>
+        <div class="mobal-container">
+            <h1 class="h1-gg">Thêm mới phòng ban</h1>
+            <span>
+                <label>Mã phòng ban</label>
+                <label>
+                    #<input type="text" required form="formAdd" name="maPB" style="width: 330px">
+                </label>
+            </span>
+            <span>
+                <label>Tên phòng ban</label>
+                <label>
+                    <input type="text" required form="formAdd" name="tenPB">
+                </label>
+            </span>
+            <span>
+                <label>Ảnh đại diện</label>
+                <label>
+                    <label for="fileImage2"><img src="" alt="" width="96" height="96"></label>
+                    <input type="file" id="fileImage2" onchange="loadImage(this)">
+                    <input type="text" name="anhPB"  form="formAdd" style="display: none">
+                </label>
+            </span>
+        </div>
+        <div class="mobal-footer">
+            <div id="btnFormAdd">
+                <button onclick="hideAdd()" class="btnGG">Đóng</button>
+                <button type="submit" form="formAdd" class="btnGG">Thêm phòng ban</button>
             </div>
         </div>
     </div>
@@ -690,22 +724,57 @@
         tagEdit.children[0].children[1].children[1].children[1].children[0].value = getID.substring(1);
         tagEdit.children[0].children[1].children[2].children[1].children[0].value = getName;
         tagEdit.children[0].children[1].children[3].children[1].children[0].children[0].src = getImage;
+        tagEdit.children[0].children[1].children[3].children[1].children[2].value = getImage;
         tagEdit.style.display = "block";
     }
 
     function loadImage(val) {
         var img = val.parentElement.children[0].children[0];
+        var ina = val.parentElement.children[2];
         var file = val.files[0];
         var reader = new FileReader();
 
         reader.addEventListener("load", function () {
             img.src = reader.result;
+            ina.value = reader.result;
         }, false);
 
         if (file) {
             reader.readAsDataURL(file);
         }
     }
+</script>
+<script>
+    document.getElementById("btnAND").addEventListener("mouseenter", function () {
+        document.getElementById("btnAND").classList.add("accept");
+    });
+    document.getElementById("btnAND").addEventListener("mouseleave", function () {
+        document.getElementById("btnAND").classList.remove("accept");
+    });
+
+    document.getElementById("btnAND").addEventListener("click", showAdd);
+
+    function showAdd() {
+        document.getElementById("add").style.display = 'block';
+        document.getElementById("add").children[0].children[1].children[1].children[1].children[0].value = null;
+        document.getElementById("add").children[0].children[1].children[2].children[1].children[0].value = null;
+        document.getElementById("add").children[0].children[1].children[3].children[1].children[0].children[0].src = null;
+        document.getElementById("add").children[0].children[1].children[3].children[1].children[2].value = null;
+    }
+
+    function hideAdd() {
+        document.getElementById('add').style.display = 'none'
+    }
+
+    document.querySelector("#addPBtop > i").addEventListener("mouseenter", function() {
+        document.querySelector("#addPBtop > div").style.opacity = '1';
+        document.querySelector("#addPBtop > div").style.width = '240px';
+    });
+    document.querySelector("#addPBtop > i").addEventListener("mouseleave", function() {
+        document.querySelector("#addPBtop > div").style.opacity = '0';
+        document.querySelector("#addPBtop > div").style.width = '0';
+    });
+    document.querySelector("#addPBtop > i").addEventListener("click", showAdd);
 </script>
 
 </body>
