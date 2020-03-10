@@ -351,6 +351,7 @@
             border-bottom: 1px solid var(--color-text-hr);
             outline: none;
             padding: 4px;
+            text-align: right;
         }
     </style>
 
@@ -459,40 +460,12 @@
     </tr>
     </tbody>
 </table>
-<!--data Table2-->
-<table id="dataTable2" style="display: none">
-    <thead>
-    <tr>
-        <th>Mã nhân viên</th>
-        <th>Tên nhân viên</th>
-        <th>Ảnh</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>0001</td>
-        <td>Trần Quang Đức</td>
-        <td>https://image.shutterstock.com/image-vector/example-stamp-260nw-426673501.jpg</td>
-    </tr>
-    <tr>
-        <td>0002</td>
-        <td>Mai Anh Đức</td>
-        <td>https://pbs.twimg.com/profile_images/823569976342773760/c2RLAG7h_400x400.jpg</td>
-    </tr>
-    <tr>
-        <td>0003</td>
-        <td>Thục Thảo Nhi</td>
-        <td>https://pbs.twimg.com/profile_images/378800000017423279/1a6d6f295da9f97bb576ff486ed81389_400x400.png</td>
-    </tr>
-    </tbody>
-</table>
 
 <script>
     var tagTGG1 = document.getElementById("tagTgg1");
     var tagTGG2 = document.getElementById("tagTgg2");
     var ttklContent = document.getElementById("ttklContent");
     var table1 = document.getElementById("dataTable");
-    var table2 = document.getElementById("dataTable2");
 
 
     function btnTGGa(val) {
@@ -580,15 +553,15 @@
 
     function loadCBB2() {
         var cbb = tagTGG2.children[0].children[1].children[1];
-        var tr = table2.children[1].children;
+        var tr = table1.children[1].children;
         for (var i = 0; i < tr.length; i++) {
             var option = document.createElement("option");
             option.value = tr[i].children[0].innerHTML;
             option.text = tr[i].children[0].innerHTML + " - " + tr[i].children[1].innerHTML;
             cbb.add(option);
         }
-        tagTGG2.children[0].children[2].children[0].src = table2.children[1].children[0].children[2].innerHTML;
-        tagTGG2.children[0].children[3].innerHTML = table2.children[1].children[0].children[1].innerHTML;
+        tagTGG2.children[0].children[2].children[0].src = table1.children[1].children[0].children[2].innerHTML;
+        tagTGG2.children[0].children[3].innerHTML = table1.children[1].children[0].children[1].innerHTML;
     }
 
     function fillter(val) {
