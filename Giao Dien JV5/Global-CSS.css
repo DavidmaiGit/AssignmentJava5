@@ -38,18 +38,18 @@
     --color-black-4: #2A2D33;
 
     /*Box shadow types*/
-    --box-shadow-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    --box-shadow-2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    --box-shadow-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    --box-shadow-4: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    --box-shadow-5: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-    --box-shadow-gg: 0 1px 2px 0 rgba(60,64,67,.30), 0 2px 6px 2px rgba(60,64,67,.15);
+    --box-shadow-1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --box-shadow-2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    --box-shadow-3: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    --box-shadow-4: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    --box-shadow-5: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    --box-shadow-gg: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 2px 6px 2px rgba(60, 64, 67, .15);
 
     /*Font family google*/
-    --font-family-gg: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    --font-family-gg: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
 
     /*Font gg*/
-    --font-gg-h1: 400 15px/20px Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    --font-gg-h1: 400 15px/20px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
 }
 
 html {
@@ -61,18 +61,22 @@ html {
     width: 100%;
     margin: 0 auto;
 }
+
 .content-left {
     display: flex;
     justify-content: left;
 }
+
 .content-center {
     display: flex;
     justify-content: center;
 }
+
 .content-right {
     display: flex;
     justify-content: right;
 }
+
 .content-item-center {
     align-items: center;
 }
@@ -107,12 +111,12 @@ html {
 }
 
 .tagMenu > .tagMenu-content > div > a:hover {
-    background-color: rgba(0,0,0,0.039);
+    background-color: rgba(0, 0, 0, 0.039);
     transition: background 15ms;
 }
 
 .tagMenu > .tagMenu-content > div > a:focus {
-    background-color: rgba(0,0,0,0.122);
+    background-color: rgba(0, 0, 0, 0.122);
     transition: background 75ms;
 }
 
@@ -181,6 +185,7 @@ html {
     cursor: pointer;
     user-select: none;
 }
+
 .btnGG:hover {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     background-image: -webkit-linear-gradient(top, #f8f8f8, #f1f1f1);
@@ -188,6 +193,7 @@ html {
     border: 1px solid #c6c6c6;
     color: #222;
 }
+
 .btnGG:focus {
     border: 1px solid #4d90fe;
     outline: none;
@@ -208,4 +214,49 @@ html {
 
 .scrollbarGG::-webkit-scrollbar-thumb:hover {
     background-color: #b2b3b6;
+}
+
+div#message {
+    position: fixed;
+    bottom: 0;
+    left: 30px;
+    z-index: 200;
+    width: 450px;
+}
+
+div#message > div.data-messPing {
+    background-color: #323232;
+    margin: 26px 0;
+    padding: 30px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    animation: animateleft 0.2s;
+    transition: opacity 0.2s;
+}
+
+div#message > div.data-messPing > label {
+    color: white;
+    width: 100%;
+    display: inline-flex;
+}
+
+div#message > div.data-messPing > i.close {
+    color: rgba(255, 255, 255, 0.3);
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 30px;
+    font-size: 20px;
+    font-weight: 100;
+    cursor: pointer;
+    transition: .2s;
+}
+
+div#message > div.data-messPing > i.close:hover {
+    color: rgba(255, 255, 255, 1);
 }

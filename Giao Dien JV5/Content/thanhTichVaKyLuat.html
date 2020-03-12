@@ -399,9 +399,10 @@
 
         #tagHistor > div.thContent > div.thHeader > div.thhBTNTgg {
             display: inline-flex;
-            border-radius: 4px;
+            border-radius: 8px;
             border: 1px solid #DADCE0;
             margin: 15px 0 0 0;
+            overflow: hidden;
         }
 
         #tagHistor > div.thContent > div.thHeader > div.thhBTNTgg > div {
@@ -756,24 +757,6 @@
                         <td>Lý do cái quần què</td>
                         <td>1</td>
                     </tr>
-                    <tr>
-                        <td>0001</td>
-                        <td>27/09/2000</td>
-                        <td>Lý do cái quần què</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>0001</td>
-                        <td>27/09/2000</td>
-                        <td>Lý do cái quần què</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>0001</td>
-                        <td>27/09/2000</td>
-                        <td>Lý do cái quần què</td>
-                        <td>1</td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -810,10 +793,10 @@
 </table>
 
 <script>
-    var tagTGG1 = document.getElementById("tagTgg1");
-    var tagTGG2 = document.getElementById("tagTgg2");
-    var ttklContent = document.getElementById("ttklContent");
-    var table1 = document.getElementById("dataTable");
+    const tagTGG1 = document.getElementById("tagTgg1");
+    const tagTGG2 = document.getElementById("tagTgg2");
+    const ttklContent = document.getElementById("ttklContent");
+    const table1 = document.getElementById("dataTable");
 
 
     function btnTGGa(val) {
@@ -833,15 +816,16 @@
     }
 
     function btnTGGb(val) {
+        let vvv;
         if (val === "Thành tích") {
-            var vvv = ttklContent.children[0].children[0];
+            vvv = ttklContent.children[0].children[0];
             vvv.classList.add("accept");
             vvv.parentElement.children[1].classList.remove("accept");
             vvv.parentElement.children[2].style.transform = "translateX(0px)";
             tagTGG1.style.transform = "translateX(0px)";
             tagTGG2.style.transform = "translateX(0px)";
         } else if (val === "Kỷ luật") {
-            var vvv = ttklContent.children[0].children[1];
+            vvv = ttklContent.children[0].children[1];
             vvv.classList.add("accept");
             vvv.parentElement.children[0].classList.remove("accept");
             vvv.parentElement.children[2].style.transform = "translateX(438px)";
@@ -851,13 +835,13 @@
     }
 
     function loadData(val) {
-        var valu = val.value;
-        var setImage = val.parentElement.parentElement.children[2].children[0];
-        var setName = val.parentElement.parentElement.children[3];
-        var setLyDo = val.parentElement.parentElement.children[4].children[1];
-        var setDate = val.parentElement.parentElement.children[5].children[1];
-        var tr = table1.children[1].children;
-        for (var i = 0; i < tr.length; i++) {
+        const valu = val.value;
+        const setImage = val.parentElement.parentElement.children[2].children[0];
+        const setName = val.parentElement.parentElement.children[3];
+        const setLyDo = val.parentElement.parentElement.children[4].children[1];
+        const setDate = val.parentElement.parentElement.children[5].children[1];
+        const tr = table1.children[1].children;
+        for (let i = 0; i < tr.length; i++) {
             if (valu === tr[i].children[0].innerHTML) {
                 setName.innerHTML = tr[i].children[1].innerHTML;
                 setImage.src = tr[i].children[2].innerHTML;
@@ -869,13 +853,13 @@
     }
 
     function loadData2(val) {
-        var valu = val.value;
-        var setImage = val.parentElement.parentElement.children[2].children[0];
-        var setName = val.parentElement.parentElement.children[3];
-        var setLyDo = val.parentElement.parentElement.children[4].children[1];
-        var setDate = val.parentElement.parentElement.children[5].children[1];
-        var tr = table1.children[1].children;
-        for (var i = 0; i < tr.length; i++) {
+        const valu = val.value;
+        const setImage = val.parentElement.parentElement.children[2].children[0];
+        const setName = val.parentElement.parentElement.children[3];
+        const setLyDo = val.parentElement.parentElement.children[4].children[1];
+        const setDate = val.parentElement.parentElement.children[5].children[1];
+        const tr = table1.children[1].children;
+        for (let i = 0; i < tr.length; i++) {
             if (valu === tr[i].children[0].innerHTML) {
                 setName.innerHTML = tr[i].children[1].innerHTML;
                 setImage.src = tr[i].children[2].innerHTML;
@@ -887,10 +871,10 @@
     }
 
     function loadCBB1() {
-        var cbb = tagTGG1.children[0].children[1].children[1];
-        var tr = table1.children[1].children;
-        for (var i = 0; i < tr.length; i++) {
-            var option = document.createElement("option");
+        const cbb = tagTGG1.children[0].children[1].children[1];
+        const tr = table1.children[1].children;
+        for (let i = 0; i < tr.length; i++) {
+            const option = document.createElement("option");
             option.value = tr[i].children[0].innerHTML;
             option.text = tr[i].children[0].innerHTML + " - " + tr[i].children[1].innerHTML;
             cbb.add(option);
@@ -900,10 +884,10 @@
     }
 
     function loadCBB2() {
-        var cbb = tagTGG2.children[0].children[1].children[1];
-        var tr = table1.children[1].children;
-        for (var i = 0; i < tr.length; i++) {
-            var option = document.createElement("option");
+        const cbb = tagTGG2.children[0].children[1].children[1];
+        const tr = table1.children[1].children;
+        for (let i = 0; i < tr.length; i++) {
+            const option = document.createElement("option");
             option.value = tr[i].children[0].innerHTML;
             option.text = tr[i].children[0].innerHTML + " - " + tr[i].children[1].innerHTML;
             cbb.add(option);
@@ -913,14 +897,14 @@
     }
 
     function fillter(val) {
-        var input, fillter, select, option, i;
+        let input, fillter, select, option, i, txtValue;
         input = val;
         fillter = input.value.toUpperCase();
         select = document.querySelector("#tagTgg1 > div.tagTGGContent > label:nth-child(2) > select");
         option = select.options;
         for (i = 0; i < select.length; i++) {
             if (option) {
-                txtValue = option[i].textContent || option[i].innerText
+                txtValue = option[i].textContent || option[i].innerText;
                 if (txtValue.toUpperCase().indexOf(fillter) > -1) {
                     option[i].style.display = "";
                 } else {
@@ -929,7 +913,7 @@
             }
         }
         for (i = 0; i < select.length; i++) {
-            var valv = (select.options[i].style.display === 'none');
+            const valv = (select.options[i].style.display === 'none');
             if (!valv) {
                 select.selectedIndex = i;
                 load(select.options[i].value);
@@ -939,14 +923,14 @@
     }
 
     function fillter2(val) {
-        var input, fillter, select, option, i;
+        let input, fillter, select, option, i, txtValue;
         input = val;
         fillter = input.value.toUpperCase();
         select = document.querySelector("#tagTgg2 > div.tagTGGContent > label:nth-child(2) > select");
         option = select.options;
         for (i = 0; i < select.length; i++) {
             if (option) {
-                txtValue = option[i].textContent || option[i].innerText
+                txtValue = option[i].textContent || option[i].innerText;
                 if (txtValue.toUpperCase().indexOf(fillter) > -1) {
                     option[i].style.display = "";
                 } else {
@@ -964,12 +948,12 @@
     }
 
     function load(val) {
-        var setImage = document.querySelector("#tagTgg1 > div.tagTGGContent > label:nth-child(3) > img");
-        var setName = document.querySelector("#tagTgg1 > div.tagTGGContent > label:nth-child(4)");
-        var setLyDo = document.querySelector("#tagTgg1 > div.tagTGGContent > label:nth-child(5) > textarea");
-        var setDate = document.querySelector("#tagTgg1 > div.tagTGGContent > label:nth-child(6) > input[type=date]");
-        var tr = table1.children[1].children;
-        for (var i = 0; i < tr.length; i++) {
+        const setImage = document.querySelector("#tagTgg1 > div.tagTGGContent > label:nth-child(3) > img");
+        const setName = document.querySelector("#tagTgg1 > div.tagTGGContent > label:nth-child(4)");
+        const setLyDo = document.querySelector("#tagTgg1 > div.tagTGGContent > label:nth-child(5) > textarea");
+        const setDate = document.querySelector("#tagTgg1 > div.tagTGGContent > label:nth-child(6) > input[type=date]");
+        const tr = table1.children[1].children;
+        for (let i = 0; i < tr.length; i++) {
             if (val === tr[i].children[0].innerHTML) {
                 setName.innerHTML = tr[i].children[1].innerHTML;
                 setImage.src = tr[i].children[2].innerHTML;
@@ -981,12 +965,12 @@
     }
 
     function load2(val) {
-        var setImage = document.querySelector("#tagTgg2 > div.tagTGGContent > label:nth-child(3) > img");
-        var setName = document.querySelector("#tagTgg2 > div.tagTGGContent > label:nth-child(4)");
-        var setLyDo = document.querySelector("#tagTgg2 > div.tagTGGContent > label:nth-child(5) > textarea");
-        var setDate = document.querySelector("#tagTgg2 > div.tagTGGContent > label:nth-child(6) > input[type=date]");
-        var tr = table1.children[1].children;
-        for (var i = 0; i < tr.length; i++) {
+        const setImage = document.querySelector("#tagTgg2 > div.tagTGGContent > label:nth-child(3) > img");
+        const setName = document.querySelector("#tagTgg2 > div.tagTGGContent > label:nth-child(4)");
+        const setLyDo = document.querySelector("#tagTgg2 > div.tagTGGContent > label:nth-child(5) > textarea");
+        const setDate = document.querySelector("#tagTgg2 > div.tagTGGContent > label:nth-child(6) > input[type=date]");
+        const tr = table1.children[1].children;
+        for (let i = 0; i < tr.length; i++) {
             if (val === tr[i].children[0].innerHTML) {
                 setName.innerHTML = tr[i].children[1].innerHTML;
                 setImage.src = tr[i].children[2].innerHTML;
@@ -1005,28 +989,29 @@
 </script>
 <script>
     function thhBTNTggJS(val) {
-        for (var i = 0; i < val.parentElement.children.length; i++) {
+        let i;
+        for (i = 0; i < val.parentElement.children.length; i++) {
             val.parentElement.children[i].classList.remove("accept");
         }
-        var table = document.querySelector("#tagHistor > div > div.thMain > div.scrollbarGG > table");
-        var tbody = table.children[0];
-        var tr = tbody.children;
+        const table = document.querySelector("#tagHistor > div > div.thMain > div.scrollbarGG > table");
+        const tbody = table.children[0];
+        const tr = tbody.children;
         if ((val.innerHTML === "Thành tích") || (val.innerText === "Thành tích")) {
-            for (var i = 0; i < tr.length; i++) {
+            for (i = 0; i < tr.length; i++) {
                 tr[i].style.display = "none";
                 if ((tr[i].children[3].innerHTML === "0") || (tr[i].children[3].innerText === "0")) {
                     tr[i].style.display = "";
                 }
             }
         } else if ((val.innerHTML === "Kỷ luật") || (val.innerText === "Kỷ luật")) {
-            for (var i = 0; i < tr.length; i++) {
+            for (i = 0; i < tr.length; i++) {
                 tr[i].style.display = "none";
                 if ((tr[i].children[3].innerHTML === "1") || (tr[i].children[3].innerText === "1")) {
                     tr[i].style.display = "";
                 }
             }
         } else {
-            for (var i = 0; i < tr.length; i++) {
+            for (i = 0; i < tr.length; i++) {
                 tr[i].style.display = "";
             }
         }
@@ -1034,15 +1019,19 @@
     }
 
     function loadHisto() {
-        var table = document.querySelector("#tagHistor > div > div.thMain > div.scrollbarGG > table");
-        var tbody = table.children[0];
-        var tr = tbody.children;
-        for (var i = 0; tr.length; i++) {
-            var td = tr[i].getElementsByTagName("td")[3];
-            if ((td.innerHTML === "0") || (td.innerText === "0")) {
-                tr[i].classList.add("up");
-            } else {
-                tr[i].classList.add("down");
+        let table, tr, td;
+        table = document.querySelector("#tagHistor > div > div.thMain > div.scrollbarGG > table");
+        // var tbody = table.children[0];
+        tr = table.getElementsByTagName("tr");
+        for (let i = 0; tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[3];
+            if (td) {
+                let txtValue = td.textContent || td.innerText;
+                if (txtValue === "0") {
+                    tr[i].classList.add("up");
+                } else {
+                    tr[i].classList.add("down");
+                }
             }
         }
     }
@@ -1060,7 +1049,7 @@
     function loadInput(val) {
         document.querySelector("#date1").value = "";
         document.querySelector("#date2").value = "";
-        var input, filter, table, tr, td, i;
+        let input, filter, table, tr, td, i, txtValue;
         input = val;
         filter = input.value.toUpperCase();
         table = document.getElementById("dataTableHitstor");
@@ -1081,7 +1070,7 @@
 
     function loadDate() {
         document.querySelector("#tagHistor > div > div.thHeader > div.thhInput > label:nth-child(2) > input[type=text]").value = null;
-        var date1, date2, table, tr, td, i, filter, filter2;
+        let date1, date2, table, tr, td, i, filter, filter2, txtValue;
         date1 = new Date(document.querySelector("#date1").value);
         date2 = new Date(document.querySelector("#date2").value);
         table = document.getElementById("dataTableHitstor");
@@ -1109,21 +1098,22 @@
     }
 
     function convertTypeDate(val) {
-        var dd = val.substring(8, 10);
-        var MM = val.substring(5, 7);
-        var yyyy = val.substring(0, 4);
+        const dd = val.substring(8, 10);
+        const MM = val.substring(5, 7);
+        const yyyy = val.substring(0, 4);
         return dd + "/" + MM + "/" + yyyy;
     }
 
     function reConvertTypeDate(val) {
-        var dd = val.substring(0, 2);
-        var MM = val.substring(3, 5);
-        var yyyy = val.substring(6, 10);
+        const dd = val.substring(0, 2);
+        const MM = val.substring(3, 5);
+        const yyyy = val.substring(6, 10);
         return yyyy + "-" + MM + "-" + dd;
     }
 
     loadHisto();
 </script>
+<script src="../Global-JS.js"></script>
 
 </body>
 </html>
