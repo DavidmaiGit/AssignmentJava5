@@ -333,10 +333,12 @@
             outline: none;
             padding: 4px;
         }
+
         #tagTgg2 > div.tagTGGContent > label:nth-child(1) {
             top: 25px;
             left: 450px;
         }
+
         #tagTgg2 > div.tagTGGContent > label:nth-child(1) > span {
             text-align: right;
             color: var(--color-text-2);
@@ -346,12 +348,279 @@
             letter-spacing: .07272727em;
             display: block;
         }
+
         #tagTgg2 > div.tagTGGContent > label:nth-child(1) > input[type=text] {
             border: none;
             border-bottom: 1px solid var(--color-text-hr);
             outline: none;
             padding: 4px;
             text-align: right;
+        }
+    </style>
+    <style>
+        #tagHistor > div.thContent {
+            background-color: white;
+            width: 840px;
+            margin: 26px auto;
+            border-radius: 8px;
+            border: 1px solid #DADCE0;
+        }
+
+        #tagHistor > div.thContent > div.thHeader {
+            padding: 24px;
+            background-image: url("https://www.gstatic.com/identity/boq/accountsettingsmobile/reservations_scene_316x112_166117b2f9a9fdcce83b20f77cf604e9.png");
+            background-repeat: no-repeat;
+            background-position: 500px 50px;
+            position: relative;
+        }
+
+        #tagHistor > div.thContent > div.thHeader > h1 {
+            line-height: 1.5;
+            box-sizing: inherit;
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 10px 0;
+            font-size: 22px;
+            font-weight: 400;
+            letter-spacing: 0;
+            color: var(--color-text);
+        }
+
+        #tagHistor > div.thContent > div.thHeader > h2 {
+            line-height: 1.5;
+            box-sizing: inherit;
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 10px 0;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 0;
+            color: var(--color-text-2);
+            max-width: 500px;
+        }
+
+        #tagHistor > div.thContent > div.thHeader > div.thhBTNTgg {
+            display: inline-flex;
+            border-radius: 4px;
+            border: 1px solid #DADCE0;
+            margin: 15px 0 0 0;
+        }
+
+        #tagHistor > div.thContent > div.thHeader > div.thhBTNTgg > div {
+            padding: 8px 10px;
+            background: #E8F0FE;
+            color: var(--color-text-hr);
+            border-right: 1px solid #DADCE0;
+            cursor: pointer;
+            font-size: 14px;
+            transition: .2s;
+        }
+
+        #tagHistor > div.thContent > div.thHeader > div.thhBTNTgg > div:last-child {
+            border-right: none;
+        }
+
+        #tagHistor > div.thContent > div.thHeader > div.thhBTNTgg > div:hover {
+
+        }
+
+        #tagHistor > div.thContent > div.thHeader > div.thhBTNTgg > div.accept {
+            background-color: #4285F4;
+            color: white;
+        }
+
+        #tagHistor > div > div.thMain > div:nth-child(1) {
+            display: inline-flex;
+            font-family: Verdana, sans-serif;
+            line-height: 1.5;
+            box-sizing: inherit;
+            font-size: 12px;
+            color: var(--color-text-hr);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: .07272727em;
+            cursor: default;
+            padding: 15px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #tagHistor > div > div.thMain > div:nth-child(2) {
+            overflow-y: scroll;
+            max-height: 650px;
+        }
+
+        #tagHistor > div > div.thMain > div:nth-child(2) > table {
+            border-spacing: unset;
+            color: var(--color-text);
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        #tagHistor > div > div.thMain > div:nth-child(2) > table > tbody > tr > td {
+            padding: 15px 0;
+            border-bottom: 1px solid #DADCE0;
+        }
+
+        #tagHistor > div > div.thMain > div:nth-child(2) > table > tbody > tr > td:nth-child(4) {
+            display: none;
+        }
+
+        #tagHistor > div > div.thMain > div:nth-child(1) > div:nth-child(1),
+        #tagHistor > div > div.thMain > div:nth-child(2) > table > tbody > tr > td:nth-child(1) {
+            width: 150px;
+            padding: 0 0 0 40px;
+        }
+
+        #tagHistor > div > div.thMain > div:nth-child(2) > table > tbody > tr > td:nth-child(1):before {
+            content: "#";
+        }
+
+        #tagHistor > div > div.thMain > div:nth-child(1) > div:nth-child(2),
+        #tagHistor > div > div.thMain > div:nth-child(2) > table > tbody > tr > td:nth-child(2) {
+            width: 170px;
+            padding: 0 0 0 15px;
+        }
+
+        #tagHistor > div > div.thMain > div:nth-child(1) > div:nth-child(3),
+        #tagHistor > div > div.thMain > div:nth-child(2) > table > tbody > tr > td:nth-child(3) {
+            width: 510px;
+        }
+
+        #tagHistor > div > div.thMain > div:nth-child(2) > table > tbody > tr.up {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGSmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDggNzkuMTY0MDM2LCAyMDE5LzA4LzEzLTAxOjA2OjU3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIwLTAzLTEyVDA0OjM0OjM0KzA3OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIwLTAzLTEyVDA0OjM0OjM0KzA3OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMC0wMy0xMlQwNDozNDozNCswNzowMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDplYWM0NTAwNi03YzZhLTg2NDMtYjM1MC03MDBkZWIxOTkwMjAiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDpmYTk0ZjUzNy0wYTZlLTRiNDctYTg3ZC1jNTA5NjcwM2Y5ZGQiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpjMzVkNTI2OC04NTE3LTA3NDEtOWUwOS1kMjdjNjAzYmRiYjQiIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDpjMzVkNTI2OC04NTE3LTA3NDEtOWUwOS1kMjdjNjAzYmRiYjQiIHN0RXZ0OndoZW49IjIwMjAtMDMtMTJUMDQ6MzQ6MzQrMDc6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyMS4wIChXaW5kb3dzKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZWFjNDUwMDYtN2M2YS04NjQzLWIzNTAtNzAwZGViMTk5MDIwIiBzdEV2dDp3aGVuPSIyMDIwLTAzLTEyVDA0OjM0OjM0KzA3OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDxwaG90b3Nob3A6VGV4dExheWVycz4gPHJkZjpCYWc+IDxyZGY6bGkgcGhvdG9zaG9wOkxheWVyTmFtZT0i74OeIiBwaG90b3Nob3A6TGF5ZXJUZXh0PSLvg54iLz4gPC9yZGY6QmFnPiA8L3Bob3Rvc2hvcDpUZXh0TGF5ZXJzPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PtFIspoAAADZSURBVEiJ7da7EYJAEMbx/zk2QAEYaAnmEtkKPUgBOLRgK5BgbgkaSAGUsCYH6sjjDnkk90X3mJ3f3CZ7SkRYIqtFVAc7eMqsAZRSVkV+Hm+BUG8vRRA9bOpFBCUiVrCfx3sgBTx9VALHIohuNrBVqxtQ9DrVd8YxhlvQwbgR3IMOwnthQ9Qa74QtUSu8FR6IGuON8J+oEf4Dj4T24l/wyGgnXsMToa24EhE217MH3CdCP1MCu+fhVFYvDmdA0UYI71ZnM6BVshrWkyWZAU2qKabc99bBDh4rL/6qWzUVFtpuAAAAAElFTkSuQmCC");
+            background-repeat: no-repeat;
+            background-position: left;
+            background-position-x: 12px;
+            background-size: 15px;
+        }
+
+        #tagHistor > div > div.thMain > div:nth-child(2) > table > tbody > tr.up:hover {
+            cursor: default;
+            background-color: rgba(29, 193, 134, 0.05);
+        }
+
+        #tagHistor > div > div.thMain > div:nth-child(2) > table > tbody > tr.down {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGSmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDggNzkuMTY0MDM2LCAyMDE5LzA4LzEzLTAxOjA2OjU3ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIwLTAzLTEyVDA0OjM4OjUyKzA3OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIwLTAzLTEyVDA0OjM4OjUyKzA3OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMC0wMy0xMlQwNDozODo1MiswNzowMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDplMWQxNmFlNC00MTIxLTBiNGQtYTJjMi1mOTllZmYxZTFjYmIiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo4ZmM2ZWNlOC0xNjE1LTk1NDMtODIzZi1iYTk5OWU4OWI1MDAiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3ZmNjNTYxNS1mMTg2LWI1NGEtOGYwMS02NjI1NGZlN2ExNjEiIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo3ZmNjNTYxNS1mMTg2LWI1NGEtOGYwMS02NjI1NGZlN2ExNjEiIHN0RXZ0OndoZW49IjIwMjAtMDMtMTJUMDQ6Mzg6NTIrMDc6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyMS4wIChXaW5kb3dzKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZTFkMTZhZTQtNDEyMS0wYjRkLWEyYzItZjk5ZWZmMWUxY2JiIiBzdEV2dDp3aGVuPSIyMDIwLTAzLTEyVDA0OjM4OjUyKzA3OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDxwaG90b3Nob3A6VGV4dExheWVycz4gPHJkZjpCYWc+IDxyZGY6bGkgcGhvdG9zaG9wOkxheWVyTmFtZT0i74OdIiBwaG90b3Nob3A6TGF5ZXJUZXh0PSLvg50iLz4gPC9yZGY6QmFnPiA8L3Bob3Rvc2hvcDpUZXh0TGF5ZXJzPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pk5LS4QAAADaSURBVEiJ7dbNDcIwDAXgZ8QY5MIKMAK9p0uwAowAK3SJehCyApdyzwjm0KYI9S+BppWg75ZI1idFsWwSEcyR1SzqAi9wzKwBgIhQaH0BcIrsXRXzWURAIoJHmu4A3CKjLvtNnhv31IeJ0NpycAbAToDayiphxWwBJJFxCyCprNevVswmIu5Q4y7e2ikS3kAbcAS8FW2FR8Q70U54BLwX7YW/wAfRQfgD3Av1ggNwb9Qb9sCD0CC4Bw9GAZTTiYhCalBovQVwrI6ZYr6H1NdjcY783+qzwL8PPwHwNHHh6OHimgAAAABJRU5ErkJggg==");
+            background-repeat: no-repeat;
+            background-position: left;
+            background-position-x: 12px;
+            background-size: 15px;
+        }
+
+        #tagHistor > div > div.thMain > div:nth-child(2) > table > tbody > tr.down:hover {
+            cursor: default;
+            background-color: rgba(227, 80, 80, 0.05);
+        }
+
+        #tagHistor > div > div.thMain > div:nth-child(2) > table > tbody > tr.hide {
+            display: none;
+        }
+
+        #tagHistor > div > div.thHeader > div.thhInput {
+            position: absolute;
+            top: -30px;
+            right: -260px;
+            background-color: white;
+            max-width: 300px;
+            width: 250px;
+            animation: animatetop 0.3s;
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid #DADCE0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+            display: none;
+        }
+
+        #tagHistor > div > div.thHeader > div.thhInput > div > i {
+            width: 66px;
+            height: 66px;
+            background-color: #e8f0fe;
+            color: #1a73e8;
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            border-radius: 100%;
+        }
+
+        #tagHistor > div > div.thHeader > div.thhInput > div > h1 {
+            display: flex;
+            justify-content: center;
+            color: var(--color-text);
+            font-size: 24px;
+            font-weight: 400;
+            margin: 10px 0;
+        }
+
+        #tagHistor > div > div.thHeader > div.thhInput > div > div {
+            display: flex;
+            justify-content: center;
+            color: var(--color-text-2);
+            font-size: 13px;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+
+        #tagHistor > div > div.thHeader > div.thhInput > label {
+            display: block;
+        }
+
+        #tagHistor > div > div.thHeader > div.thhInput > label > span {
+            display: block;
+            margin: 26px 0 0 0;
+            color: var(--color-text);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: .07272727em;
+        }
+
+        #tagHistor > div > div.thHeader > div.thhInput > label > input[type=text] {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGU2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDUgNzkuMTYzNDk5LCAyMDE4LzA4LzEzLTE2OjQwOjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpwaG90b3Nob3A9Imh0dHA6Ly9ucy5hZG9iZS5jb20vcGhvdG9zaG9wLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHhtcDpDcmVhdGVEYXRlPSIyMDIwLTAzLTA3VDE1OjM5OjA1KzA3OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIwLTAzLTA3VDE1OjM5OjA1KzA3OjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMC0wMy0wN1QxNTozOTowNSswNzowMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpkNDBiNWRlNS00NDkwLTIwNGQtOTUzZS1lYzY4ZTZjZjIxMDYiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo4ZTI1ZDIzNy1hZWQ4LTMzNDItOTE2Mi1iMDY3YTRhYzE1ODciIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo3YzZjMjc3OC1iMmRhLTExNGEtOWQ0Yi0xYmRkZWEwMzg2ZWEiIHBob3Rvc2hvcDpDb2xvck1vZGU9IjMiIGRjOmZvcm1hdD0iaW1hZ2UvcG5nIj4gPHhtcE1NOkhpc3Rvcnk+IDxyZGY6U2VxPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0iY3JlYXRlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo3YzZjMjc3OC1iMmRhLTExNGEtOWQ0Yi0xYmRkZWEwMzg2ZWEiIHN0RXZ0OndoZW49IjIwMjAtMDMtMDdUMTU6Mzk6MDUrMDc6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE5IChXaW5kb3dzKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZDQwYjVkZTUtNDQ5MC0yMDRkLTk1M2UtZWM2OGU2Y2YyMTA2IiBzdEV2dDp3aGVuPSIyMDIwLTAzLTA3VDE1OjM5OjA1KzA3OjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoV2luZG93cykiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDxwaG90b3Nob3A6VGV4dExheWVycz4gPHJkZjpCYWc+IDxyZGY6bGkgcGhvdG9zaG9wOkxheWVyTmFtZT0i74qSIiBwaG90b3Nob3A6TGF5ZXJUZXh0PSLvipIiLz4gPC9yZGY6QmFnPiA8L3Bob3Rvc2hvcDpUZXh0TGF5ZXJzPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqRDacMAAAJfSURBVGiB3VrLccIwFFyYNEBOGh/TAi0kJZASkgJ8gBKSgwpISggt0IJLCEeNb5RADjgzGGztOnpm5OwtI/Oyy/v4vSdmx+MR/wGzVANFWS8AfABY9DyyCd5VxMYSwLrHxgHAa/DuELNxJ3BleAGwipyvATwn2qgAvMcMzMk/UPBAzvs8NcQGxS2ERMOqwSM5j4YVYCOEkdjHDouyVrwRtQEkCmmSNJUEtRG827FnUj1Cv02BBLNBvQGML0TJD+YRxUayEEZC+TYnIUQhMYnQYhWLVTxgbI8YkVCKheSRq16r6Z2UsvqIU/sRwxM5X+HUnvShArBhRIJ3u5aQoqxXAL7YBzNEdRlaSrjkiOWlECWkssS/FTJV7C6FSDU7Q+y6yq+S8G+Ih6FSNj8Qf498AtgKXPbBu/3VqKu0zEVZs0e2zI4wh1QKl1/8NUeSmkVxjhkU5oOF3HCYGleIEQm2kBhcdP4ixIIEKyg3EWJBwmQGOccYocUSfQGbEbmFQUIaEqmhZVEsrjDUIxZlk9k4qMPUOe4A+W0OaG3+krwwaWiKfPbngmdFWa9xajmmhkPw7v73jzmm27q3cnUOg014DpiyR1ob+ikPVq3qOMep758iWrzlO8SirL8Qvx7bBu+iV2xFWX8jnpOb4F30iq0PQ0Irmz1vF4YIyWbP2wVJSG573i6oHlGGKUaCCZHn8y6oQljHq5CwuBTqhZVHLK7YshASvQdvVj/mc/o5qBAjEko/N64QIxI0rNiPZhgUIaOTQGJ+AJoQRtJi8Z1UegHhZ07Bu89m6ZBCgjWmyY3rD51FsnxFlBnyAAAAAElFTkSuQmCC');
+            background-repeat: no-repeat;
+            background-size: 11px;
+            background-position: left;
+            padding: 0 0 0 14px;
+            width: 100%;
+            border: none;
+            outline: unset;
+            border-bottom: 1px solid #e8eaed;
+            color: var(--color-text-hr);
+        }
+
+        #tagHistor > div > div.thHeader > div.thhInput > label > input[type=date] {
+            width: 100%;
+            border: none;
+            outline: unset;
+            border-bottom: 1px solid #e8eaed;
+            padding: 4px;
+            color: var(--color-text-hr);
+        }
+
+        #tagHistor > div > div.thHeader > div:nth-child(5) {
+            position: absolute;
+            top: 190px;
+            right: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: .2s;
+            outline: none;
+        }
+
+        #tagHistor > div > div.thHeader > div:nth-child(5):hover {
+            background-color: #E8F0FE;
+            color: var(--color-text-hr);
+        }
+
+        #tagHistor > div > div.thHeader > div:nth-child(5).accept {
+            border: 1px solid #1a73e829;
+            background-color: #E8F0FE;
+            color: var(--color-text-hr);
+            box-shadow: 0 2px 10px rgba(26, 115, 232, 0.2);
         }
     </style>
 
@@ -365,7 +634,8 @@
         <div><a href="quanLyNhanVien.html"><i class="far fa-users"></i>Quản lý nhân viên</a></div>
         <div class="accept"><a href="thanhTichVaKyLuat.html"><i class="fal fa-clipboard-user"></i>Thành tích / Kỷ
             luật</a></div>
-        <div><a href="tongHopThanhTichVaKyLuat.html"><i class="far fa-trophy-alt"></i>Tổng hợp thành tích và kỷ luật</a></div>
+        <div><a href="tongHopThanhTichVaKyLuat.html"><i class="far fa-trophy-alt"></i>Tổng hợp thành tích và kỷ luật</a>
+        </div>
     </div>
 </div>
 
@@ -397,7 +667,8 @@
                     <label><img src="" alt=""></label>
                     <label>Tên Nhân Viên</label>
                     <label><span>Lý do</span><textarea form="formThanhTich" name="notes"></textarea></label>
-                    <label><span>Ngày ghi nhận</span><input type="date" form="formThanhTich" required name="date"></label>
+                    <label><span>Ngày ghi nhận</span><input type="date" form="formThanhTich" required
+                                                            name="date"></label>
                     <label>
                         <button type="submit" class="btnGG" form="formThanhTich">Ghi Nhận</button>
                     </label>
@@ -420,7 +691,8 @@
                     <label><img src="" alt=""></label>
                     <label>Tên Nhân Viên</label>
                     <label><span>Lý do</span><textarea form="formKyLuat" name="notes"></textarea></label>
-                    <label><span style="text-align: right;">Ngày ghi nhận</span><input type="date" form="formKyLuat" required name="date"></label>
+                    <label><span style="text-align: right;">Ngày ghi nhận</span><input type="date" form="formKyLuat"
+                                                                                       required name="date"></label>
                     <label>
                         <button type="submit" class="btnGG" form="formKyLuat">Ghi Nhận</button>
                     </label>
@@ -432,6 +704,82 @@
         </div>
     </div>
 </main>
+<div id="tagHistor">
+    <div class="thContent">
+        <div class="thHeader">
+            <h1>Lịch sử ghi nhận</h1>
+            <h2>Lịch sử ghi nhận thành tích và kỷ luật</h2>
+            <div class="thhBTNTgg">
+                <div class="accept" onclick="thhBTNTggJS(this)">Tất cả</div>
+                <div onclick="thhBTNTggJS(this)">Thành tích</div>
+                <div onclick="thhBTNTggJS(this)">Kỷ luật</div>
+            </div>
+            <div class="thhInput">
+                <div>
+                    <i class="far fa-search"></i>
+                    <h1>Tìm kiếm</h1>
+                    <div>Công cụ tìm kiếm nhanh</div>
+                </div>
+                <label>
+                    <span>Mã nhân viên</span>
+                    <input type="text" onkeyup="loadInput(this)">
+                </label>
+                <label for="date1">
+                    <span>Từ ngày</span>
+                    <input id="date1" type="date" onchange="loadDate()">
+                </label>
+                <label for="date2">
+                    <span>đến ngày</span>
+                    <input id="date2" type="date" onchange="loadDate()">
+                </label>
+            </div>
+            <div onclick="tggSreach(this)"><i class="far fa-search"></i></div>
+        </div>
+        <div class="thMain">
+            <div>
+                <div style="padding: 0 0 0 10px;">Mã nhân viên</div>
+                <div>Ngày ghi nhận</div>
+                <div>Lý do</div>
+            </div>
+            <div class="scrollbarGG">
+                <table id="dataTableHitstor">
+                    <tbody>
+                    <tr>
+                        <td>0001</td>
+                        <td>27/09/2000</td>
+                        <td>Lý do cái quần què</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>27/09/2000</td>
+                        <td>Lý do cái quần què</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>27/09/2000</td>
+                        <td>Lý do cái quần què</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>27/09/2000</td>
+                        <td>Lý do cái quần què</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>0001</td>
+                        <td>27/09/2000</td>
+                        <td>Lý do cái quần què</td>
+                        <td>1</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!--data Table-->
 <table id="dataTable" style="display: none">
@@ -654,6 +1002,127 @@
 
     //Thành tích | Kỷ luật
     btnTGGb("Thành tích");
+</script>
+<script>
+    function thhBTNTggJS(val) {
+        for (var i = 0; i < val.parentElement.children.length; i++) {
+            val.parentElement.children[i].classList.remove("accept");
+        }
+        var table = document.querySelector("#tagHistor > div > div.thMain > div.scrollbarGG > table");
+        var tbody = table.children[0];
+        var tr = tbody.children;
+        if ((val.innerHTML === "Thành tích") || (val.innerText === "Thành tích")) {
+            for (var i = 0; i < tr.length; i++) {
+                tr[i].style.display = "none";
+                if ((tr[i].children[3].innerHTML === "0") || (tr[i].children[3].innerText === "0")) {
+                    tr[i].style.display = "";
+                }
+            }
+        } else if ((val.innerHTML === "Kỷ luật") || (val.innerText === "Kỷ luật")) {
+            for (var i = 0; i < tr.length; i++) {
+                tr[i].style.display = "none";
+                if ((tr[i].children[3].innerHTML === "1") || (tr[i].children[3].innerText === "1")) {
+                    tr[i].style.display = "";
+                }
+            }
+        } else {
+            for (var i = 0; i < tr.length; i++) {
+                tr[i].style.display = "";
+            }
+        }
+        val.classList.add("accept");
+    }
+
+    function loadHisto() {
+        var table = document.querySelector("#tagHistor > div > div.thMain > div.scrollbarGG > table");
+        var tbody = table.children[0];
+        var tr = tbody.children;
+        for (var i = 0; tr.length; i++) {
+            var td = tr[i].getElementsByTagName("td")[3];
+            if ((td.innerHTML === "0") || (td.innerText === "0")) {
+                tr[i].classList.add("up");
+            } else {
+                tr[i].classList.add("down");
+            }
+        }
+    }
+
+    function tggSreach(val) {
+        if (val.classList.value.indexOf("accept")) {
+            val.classList.add("accept");
+            document.querySelector("#tagHistor > div > div.thHeader > div.thhInput").style.display = "block";
+        } else {
+            val.classList.remove("accept");
+            document.querySelector("#tagHistor > div > div.thHeader > div.thhInput").style.display = "none";
+        }
+    }
+
+    function loadInput(val) {
+        document.querySelector("#date1").value = "";
+        document.querySelector("#date2").value = "";
+        var input, filter, table, tr, td, i;
+        input = val;
+        filter = input.value.toUpperCase();
+        table = document.getElementById("dataTableHitstor");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            tr[i].classList.remove("hide");
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].classList.remove("hide");
+                } else {
+                    tr[i].classList.add("hide");
+                }
+            }
+        }
+    }
+
+    function loadDate() {
+        document.querySelector("#tagHistor > div > div.thHeader > div.thhInput > label:nth-child(2) > input[type=text]").value = null;
+        var date1, date2, table, tr, td, i, filter, filter2;
+        date1 = new Date(document.querySelector("#date1").value);
+        date2 = new Date(document.querySelector("#date2").value);
+        table = document.getElementById("dataTableHitstor");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            tr[i].classList.remove("hide");
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                filter = (date1 <= new Date(reConvertTypeDate(txtValue)));
+                filter2 = (date2 >= new Date(reConvertTypeDate(txtValue)));
+                if ((document.querySelector("#date1").value === "") && (document.querySelector("#date2").value === "")) {
+                    tr[i].classList.remove("hide");
+                } else if ((document.querySelector("#date1").value === "") && filter2 === true) {
+                    tr[i].classList.remove("hide");
+                } else if (filter === true && (document.querySelector("#date2").value === "")) {
+                    tr[i].classList.remove("hide");
+                } else if (filter === true && filter2 === true) {
+                    tr[i].classList.remove("hide");
+                } else {
+                    tr[i].classList.add("hide");
+                }
+            }
+        }
+    }
+
+    function convertTypeDate(val) {
+        var dd = val.substring(8, 10);
+        var MM = val.substring(5, 7);
+        var yyyy = val.substring(0, 4);
+        return dd + "/" + MM + "/" + yyyy;
+    }
+
+    function reConvertTypeDate(val) {
+        var dd = val.substring(0, 2);
+        var MM = val.substring(3, 5);
+        var yyyy = val.substring(6, 10);
+        return yyyy + "-" + MM + "-" + dd;
+    }
+
+    loadHisto();
 </script>
 
 </body>
