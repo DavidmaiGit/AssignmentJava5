@@ -85,7 +85,7 @@ html {
     margin: 20px 0 0 0;
     position: fixed;
     overflow: auto;
-    top: 0;
+    top: 65px;
     left: 0;
     z-index: 25;
 }
@@ -260,3 +260,238 @@ div#message > div.data-messPing > i.close {
 div#message > div.data-messPing > i.close:hover {
     color: rgba(255, 255, 255, 1);
 }
+
+header {
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    padding: 6px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+    border-bottom: 1px solid #DADCE0;
+    position: relative;
+    display: block;
+}
+header > div.left {
+    width: auto;
+}
+header > div.left > a {
+    text-decoration: unset;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+    height: 58px;
+}
+header > div.left > a > label {
+    color: white;
+    padding: 3px;
+    border-radius: 3px;
+    margin: 2px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 30px;
+    font-family: 'Product Sans',Arial,sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    cursor: pointer;
+}
+header > div.left > a > label:nth-child(2) {
+    background-color: #EA4335;
+    margin-left: 10px;
+}
+header > div.left > a > label:nth-child(3) {
+    background-color: #4285F4;
+}
+header > div.left > a > label:nth-child(4) {
+    background-color: #34A853;
+}
+header > div.left > a > label:nth-child(5) {
+    color: var(--color-text-2);
+}
+header > div.left > a:hover > label:nth-child(5) {
+    color: var(--color-text-hr);
+    text-decoration: underline;
+}
+header > div.left > a > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+header > div.right {
+    width: auto;
+    max-height: 64px;
+    height: 58px;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+header > div.right > div.hMenu {
+    margin: 0 26px 0 0;
+    position: relative;
+    display: inline-flex;
+}
+header > div.right > div.hMenu > a.bm1 {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-2);
+    border-radius: 50%;
+    text-decoration: unset;
+    cursor: pointer;
+}
+header > div.right > div.hMenu > a.bm1:hover {
+    background-color: #F0F0F0;
+}
+header > div.right > div.hMenu > a.accept {
+    background-color: #EBECEC;
+}
+header > div.right > div.hMenu > div.menu {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    z-index: 10;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+    transition: height 0.3s ease-in-out 0s;
+    padding: 4px;
+    display: none;
+}
+header > div.right > div.hMenu > div.menu > div {
+    overflow: hidden;
+    overflow-y: auto;
+    width: 300px;
+    height: 400px;
+    padding: 18px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+header > div.right > div.hMenu > div.menu > div > a {
+    display: flex;
+    flex-direction: column;
+    max-width: 100px;
+    max-height: 100px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 10px 15px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    color: var(--color-text-2);
+    text-decoration: unset;
+    text-transform: capitalize;
+}
+header > div.right > div.hMenu > div.menu > div > a:hover {
+    background-color: #E8F0FD;
+    color: var(--color-text-hr);
+}
+header > div.right > div.hMenu > div.menu > div > a > i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 50px;
+    cursor: pointer;
+}
+header > div.right > div.hMenu > div.menu > div > a > label {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    cursor: pointer;
+}
+header > div.w3-right.right.w3-col > div.hMenu > a.bm2 {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-2);
+    border-radius: 50%;
+    text-decoration: unset;
+    margin: 0 26px 0 0;
+    position: relative;
+}
+body > header > div.w3-right.right.w3-col > div.hMenu > a.bm2 > label {
+    position: absolute;
+    top: -16px;
+    right: -30px;
+    width: 100px;
+    background-color: white;
+    z-index: 10;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0;
+    display: none;
+}
+body > header > div.w3-right.right.w3-col > div.hMenu > a.bm2 > label > i {
+    font-size: 30px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-2);
+    border-radius: 50%;
+    text-decoration: unset;
+}
+body > header > div.w3-right.right.w3-col > div.hMenu > a.bm2 > label > span {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 0;
+    margin: 5px 0 0 0;
+    cursor: pointer;
+    font-size: 14px;
+}
+body > header > div.w3-right.right.w3-col > div.hMenu > a.bm2 > label > span:hover {
+    background-color: #4d90fe;
+    color: white;
+}
+body > header > div.w3-right.right.w3-col > div.titleUserName > a {
+    position: relative;
+    top: 2px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+body > header > div.w3-right.right.w3-col > div.titleUserName > a:hover {
+    background-color: #E8F0FE;
+    color: var(--color-text-hr);
+}
+body > header > div.w3-right.right.w3-col > div.titleLogin > a > i {
+    position: relative;
+    top: 2px;
+    font-size: 18px;
+}
+body > header > div.w3-right.right.w3-col > div.titleUserName {
+    color: var(--color-text-2);
+}
+body > header > div.w3-right.right.w3-col > div.titleLogin > a {
+    color: var(--color-text-2);
+    cursor: pointer;
+}
+body > header > div.w3-right.right.w3-col > div.titleLogin > a:hover {
+    color: var(--color-text-hr);
+}
+
