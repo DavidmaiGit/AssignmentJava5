@@ -105,7 +105,7 @@ function changeLang(lang) {
     document.cookie = "org.springframework.web.servlet.i18n.CookieLocaleResolver.LOCALE=" + lang;
     location.reload();
 }
- 
+
 function checkLogin() {
     if (getCookie("checklogin") === "false") {
         document.querySelector("body > header > div.w3-right.right.w3-col > div.titleLogin").style.display = "block";

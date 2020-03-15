@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="530b10cc-daf8-4f8f-a7d1-cb128bdf5e07" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/formLogin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/thanhTichVaKyLuat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Content/thanhTichVaKyLuat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Global-CSS.css" beforeDir="false" afterPath="$PROJECT_DIR$/Global-CSS.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Global-JS.js" beforeDir="false" afterPath="$PROJECT_DIR$/Global-JS.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +15,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -49,11 +48,11 @@
       <recent name="G:\GitHub\AssignmentJava5\Giao Dien JV5\Content" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.thanhTichVaKyLuat.html">
-    <configuration name="quanLyNhanVien.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Giao Dien JV5/Content/quanLyNhanVien.html" useBuiltInWebServerPort="true">
+  <component name="RunManager" selected="JavaScript Debug.login.html">
+    <configuration name="formLogin.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Giao Dien JV5/formLogin.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="quanLyPhongBan.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Giao Dien JV5/Content/quanLyPhongBan.html" useBuiltInWebServerPort="true">
+    <configuration name="login.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Giao Dien JV5/login.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="thanhTichVaKyLuat.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Giao Dien JV5/Content/thanhTichVaKyLuat.html" useBuiltInWebServerPort="true">
@@ -67,11 +66,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.login.html" />
+        <item itemvalue="JavaScript Debug.formLogin.html" />
         <item itemvalue="JavaScript Debug.thanhTichVaKyLuat.html" />
         <item itemvalue="Node.js.Global-JS.js" />
         <item itemvalue="JavaScript Debug.tongHopThanhTichVaKyLuat.html" />
-        <item itemvalue="JavaScript Debug.quanLyPhongBan.html" />
-        <item itemvalue="JavaScript Debug.quanLyNhanVien.html" />
       </list>
     </recent_temporary>
   </component>
@@ -110,7 +109,7 @@
       <workItem from="1584178729652" duration="165000" />
       <workItem from="1584195812197" duration="12866000" />
       <workItem from="1584220672645" duration="2462000" />
-      <workItem from="1584223169926" duration="7502000" />
+      <workItem from="1584223169926" duration="12912000" />
     </task>
     <servers />
   </component>
